@@ -41,13 +41,13 @@ function init() {
     metallicTexture.magFilter = THREE.LinearFilter;
     metallicTexture.encoding = THREE.sRGBEncoding;
 
-    spotLight = new THREE.SpotLight(0x5c34fe, 10);
+    spotLight = new THREE.SpotLight(0xffd86b, 10);
     spotLight.position.set(25, 50, 0);
     spotLight.angle = 1.0471975511965976;
     spotLight.penumbra = 1;
     spotLight.decay = 2;
     spotLight.distance = 174.75;
-    spotLight.map = texture;
+    spotLight.map = metallicTexture;
 
     spotLight.castShadow = true;
     spotLight.shadowBias = -0.00001;
@@ -64,9 +64,9 @@ function init() {
 
         const material = new THREE.MeshLambertMaterial({
             map: metallicTexture,
-            envMap: scene.background,
+            // envMap: scene.background,
             combine: THREE.MixOperation,
-            reflectivity: 1,
+            // reflectivity: 1,
         });
 
         abstract = new THREE.Mesh(geometry, material);
@@ -78,8 +78,7 @@ function init() {
     });
 
     const geometry = new THREE.PlaneGeometry(9999, 9999);
-
-    const material = new THREE.MeshLambertMaterial({ color: 0x060606, side: THREE.DoubleSide });
+    const material = new THREE.MeshLambertMaterial({ color: 0x020202, side: THREE.DoubleSide });
 
     const mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(0, -1, 0);
