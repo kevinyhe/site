@@ -1,12 +1,20 @@
+import { GUI } from "three/addons/libs/lil-gui.module.min.js";
+
 const DOMCanvas = document.getElementById("threeCanvas");
 
 import * as THREE from 'three';
-
-import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 import { PLYLoader } from 'three/addons/loaders/PLYLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 let renderer, scene, camera, spotLight, abstract;
+let mouseX = 0;
+let mouseY = 0;
+
+let targetX = 0;
+let targetY = 0;
+
+const windowHalfX = window.innerWidth / 2;
+const windowHalfY = window.innerHeight / 2;
 
 init();
 
@@ -34,7 +42,7 @@ function init() {
     metallicTexture.encoding = THREE.sRGBEncoding;
 
     spotLight = new THREE.SpotLight(0x5c34fe, 10);
-    spotLight.position.set( 25, 50, 0 );
+    spotLight.position.set(25, 50, 0);
     spotLight.angle = 1.0471975511965976;
     spotLight.penumbra = 1;
     spotLight.decay = 2;
@@ -58,7 +66,7 @@ function init() {
             map: metallicTexture,
             envMap: scene.background,
             combine: THREE.MixOperation,
-            reflectivity: 1
+            reflectivity: 1,
         });
 
         abstract = new THREE.Mesh(geometry, material);
@@ -69,15 +77,15 @@ function init() {
         scene.add(abstract);
     });
 
-    const geometry = new THREE.PlaneGeometry( 9999, 9999,  );
+    const geometry = new THREE.PlaneGeometry(9999, 9999);
 
-    const material = new THREE.MeshLambertMaterial({ color: 0x202020, side: THREE.DoubleSide });
+    const material = new THREE.MeshLambertMaterial({ color: 0x060606, side: THREE.DoubleSide });
 
-    const mesh = new THREE.Mesh( geometry, material );
-    mesh.position.set( 0, - 1, 0 );
-    mesh.rotation.x = - Math.PI / 2;
+    const mesh = new THREE.Mesh(geometry, material);
+    mesh.position.set(0, -1, 0);
+    mesh.rotation.x = -Math.PI / 2;
     mesh.receiveShadow = true;
-    scene.add( mesh );
+    scene.add(mesh);
 
     window.addEventListener('resize', onWindowResize);
 
@@ -101,26 +109,34 @@ function init() {
     controls.maxDistance = 500;
     controls.target.set(0, 18, 0);
     controls.update();
+
+
+    document.addEventListener('mousemove', onDocumentMouseMove);
+
 }
 
-function onWindowResize() {
+function onDocumentMouseMove(event) {
+    mouseX = (event.clientX - windowHalfX);
+    mouseY = (event.clientY - windowHalfY);
+}
 
+
+function onWindowResize() {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 
     renderer.setSize(window.innerWidth * 1.5, window.innerHeight * 1.5);
-
 }
 
 function render() {
-    try {
-        abstract.rotation.x += 0.0035;
-        abstract.rotation.y += 0.01;
-        abstract.rotation.z += 0.0025;
-    } catch (e) {
-        if (e instanceof TypeError) {
-            console.log('Abstract is not defined yet');
-        }
+    targetX = mouseX * .003;
+    targetY = mouseY * .003;
+
+    if (abstract) {
+
+        abstract.rotation.y += 0.1 * (targetX - abstract.rotation.y);
+        abstract.rotation.x += 0.1 * (targetY - abstract.rotation.x);
+        abstract.rotation.z += 0.01;
     }
 
     const time = performance.now() / 3000;
@@ -131,87 +147,87 @@ function render() {
     renderer.render(scene, camera);
 }
 
-// const gui = new GUI();
-//
-// const params = {
-//     map: texture,
-//     color: spotLight.color.getHex(),
-//     intensity: spotLight.intensity,
-//     distance: spotLight.distance,
-//     angle: spotLight.angle,
-//     penumbra: spotLight.penumbra,
-//     decay: spotLight.decay,
-//     focus: spotLight.shadow.focus,
-//     shadows: true,
-// };
-//
-// gui.add(params, 'map', texture).onChange(function (val) {
-//
-//     spotLight.map = val;
-//
-// });
-//
-// gui.addColor(params, 'color').onChange(function (val) {
-//
-//     spotLight.color.setHex(val);
-//
-// });
-//
-// gui.add(params, 'intensity', 0, 10).onChange(function (val) {
-//
-//     spotLight.intensity = val;
-//
-// });
-//
-//
-// gui.add(params, 'distance', 50, 200).onChange(function (val) {
-//
-//     spotLight.distance = val;
-//
-// });
-//
-// gui.add(params, 'angle', 0, Math.PI / 3).onChange(function (val) {
-//
-//     spotLight.angle = val;
-//
-// });
-//
-// gui.add(params, 'penumbra', 0, 1).onChange(function (val) {
-//
-//     spotLight.penumbra = val;
-//
-// });
-//
-// gui.add(params, 'decay', 1, 2).onChange(function (val) {
-//
-//     spotLight.decay = val;
-//
-// });
-//
-// gui.add(params, 'focus', 0, 1).onChange(function (val) {
-//
-//     spotLight.shadow.focus = val;
-//
-// });
-//
-//
-// gui.add(params, 'shadows').onChange(function (val) {
-//
-//     renderer.shadowMap.enabled = val;
-//
-//     scene.traverse(function (child) {
-//
-//         if (child.material) {
-//
-//             child.material.needsUpdate = true;
-//
-//         }
-//
-//     });
-//
-// });
-//
-// // let lightHelper = new THREE.SpotLightHelper( spotLight );
-// // scene.add( lightHelper ); don't need the helper anymore
-//
-// gui.open();
+    // const gui = new GUI();
+    //
+    // const params = {
+    //     map: texture,
+    //     color: spotLight.color.getHex(),
+    //     intensity: spotLight.intensity,
+    //     distance: spotLight.distance,
+    //     angle: spotLight.angle,
+    //     penumbra: spotLight.penumbra,
+    //     decay: spotLight.decay,
+    //     focus: spotLight.shadow.focus,
+    //     shadows: true,
+    // };
+    //
+    // gui.add(params, 'map', texture).onChange(function (val) {
+    //
+    //     spotLight.map = val;
+    //
+    // });
+    //
+    // gui.addColor(params, 'color').onChange(function (val) {
+    //
+    //     spotLight.color.setHex(val);
+    //
+    // });
+    //
+    // gui.add(params, 'intensity', 0, 10).onChange(function (val) {
+    //
+    //     spotLight.intensity = val;
+    //
+    // });
+    //
+    //
+    // gui.add(params, 'distance', 50, 200).onChange(function (val) {
+    //
+    //     spotLight.distance = val;
+    //
+    // });
+    //
+    // gui.add(params, 'angle', 0, Math.PI / 3).onChange(function (val) {
+    //
+    //     spotLight.angle = val;
+    //
+    // });
+    //
+    // gui.add(params, 'penumbra', 0, 1).onChange(function (val) {
+    //
+    //     spotLight.penumbra = val;
+    //
+    // });
+    //
+    // gui.add(params, 'decay', 1, 2).onChange(function (val) {
+    //
+    //     spotLight.decay = val;
+    //
+    // });
+    //
+    // gui.add(params, 'focus', 0, 1).onChange(function (val) {
+    //
+    //     spotLight.shadow.focus = val;
+    //
+    // });
+    //
+    //
+    // gui.add(params, 'shadows').onChange(function (val) {
+    //
+    //     renderer.shadowMap.enabled = val;
+    //
+    //     scene.traverse(function (child) {
+    //
+    //         if (child.material) {
+    //
+    //             child.material.needsUpdate = true;
+    //
+    //         }
+    //
+    //     });
+    //
+    // });
+    //
+    // // let lightHelper = new THREE.SpotLightHelper( spotLight );
+    // // scene.add( lightHelper ); don't need the helper anymore
+    //
+    // gui.open();
