@@ -3,8 +3,10 @@ import { PLYLoader } from 'three/addons/loaders/PLYLoader.js';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const DOMCanvas = document.getElementById("threeCanvas");
+const eye = document.getElementById("eye");
+const eyeSlash = document.getElementById("eyeSlash");
 
-let renderer, scene, camera, spotLight, abstract;
+let renderer, scene, camera, spotLight, abstract, mesh;
 let mouseX = 0;
 let mouseY = 0;
 
@@ -14,7 +16,7 @@ let targetY = 0;
 const windowHalfX = window.innerWidth / 2;
 const windowHalfY = window.innerHeight / 2;
 
-let isPaused = false;
+let potatoMode = false;
 
 init();
 
@@ -58,7 +60,7 @@ function init() {
 
     new PLYLoader().load('/models/abstract-ball.ply', function (geometry) {
 
-        geometry.scale(4,4,4);
+        geometry.scale(4, 4, 4);
         geometry.computeVertexNormals();
 
         const material = new THREE.MeshPhongMaterial({
@@ -82,7 +84,7 @@ function init() {
     const geometry = new THREE.PlaneGeometry(900, 900);
     const material = new THREE.MeshLambertMaterial({ color: 0x010101, side: THREE.DoubleSide });
 
-    const mesh = new THREE.Mesh(geometry, material);
+    mesh = new THREE.Mesh(geometry, material);
     mesh.position.set(0, -1, 0);
     mesh.rotation.x = -Math.PI / 2;
     mesh.receiveShadow = true;
@@ -112,10 +114,14 @@ function init() {
     controls.target.set(0, 18, 0);
     controls.update();
 
-
     document.addEventListener('mousemove', onDocumentMouseMove);
 
 }
+
+$('.eye').on('click', function () {
+    console.log(potatoMode);
+    potatoMode ? potatoMode = false : potatoMode = true;
+});
 
 function onDocumentMouseMove(event) {
     mouseX = (event.clientX - windowHalfX);
@@ -132,29 +138,51 @@ function onWindowResize() {
 }
 
 function render() {
-    if (!isPaused) {
-        targetX = mouseX * .003;
-        targetY = mouseY * .003;
+    if (potatoMode) {
+        eye.classList.add('hidden');
+        eyeSlash.classList.remove('hidden');
+        // eye.style.display = "flex";
+        // eyeSlash.style.display = "none";
 
-        if (abstract) {
+        spotLight.castShadow = false;
+        // spotLight.shadowDarkness = 0;
+        spotLight.shadow.mapSize.width = 256;
+        spotLight.shadow.mapSize.height = 256;
 
+        renderer.shadowMap.enabled = false;
+
+    } else {
+        eye.classList.remove('hidden');
+        eyeSlash.classList.add('hidden');
+        spotLight.castShadow = true;
+        // spotLight.shadowDarkness = 0;
+        spotLight.shadow.mapSize.width = 4096;
+        spotLight.shadow.mapSize.height = 4096;
+
+        renderer.shadowMap.enabled = true;
+
+    }
+    targetX = mouseX * .003;
+    targetY = mouseY * .003;
+
+    if (abstract) {
+        if (!potatoMode) {
             abstract.rotation.y += 0.008 * (targetX - abstract.rotation.y);
             abstract.rotation.x += 0.008 * (targetY - abstract.rotation.x);
             abstract.rotation.z += 0.005;
         }
+    }
 
-        const time = performance.now() / 3000;
+    const time = performance.now() / 3000;
 
+    if (!potatoMode) {
         spotLight.position.x = Math.cos(time) * 15;
         spotLight.position.z = Math.sin(time) * 15;
-
-        renderer.render(scene, camera);
     }
+
+    renderer.render(scene, camera);
 }
 
-function disableRender() {
-    isPaused = true;
-}
 // const gui = new GUI();
 //
 // const params = {
