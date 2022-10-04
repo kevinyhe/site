@@ -149,6 +149,10 @@ function render() {
         spotLight.shadow.mapSize.width = 256;
         spotLight.shadow.mapSize.height = 256;
 
+        if (abstract) {
+            abstract.visible = false;
+        }
+
         renderer.shadowMap.enabled = false;
 
     } else {
@@ -156,6 +160,11 @@ function render() {
         eyeSlash.classList.add('hidden');
         spotLight.castShadow = true;
         // spotLight.shadowDarkness = 0;
+
+        if (abstract) {
+            abstract.visible = true;
+        }
+
         spotLight.shadow.mapSize.width = 4096;
         spotLight.shadow.mapSize.height = 4096;
 
@@ -182,89 +191,4 @@ function render() {
 
     renderer.render(scene, camera);
 }
-
-// const gui = new GUI();
-//
-// const params = {
-//     map: texture,
-//     color: spotLight.color.getHex(),
-//     intensity: spotLight.intensity,
-//     distance: spotLight.distance,
-//     angle: spotLight.angle,
-//     penumbra: spotLight.penumbra,
-//     decay: spotLight.decay,
-//     focus: spotLight.shadow.focus,
-//     shadows: true,
-// };
-//
-// gui.add(params, 'map', texture).onChange(function (val) {
-//
-//     spotLight.map = val;
-//
-// });
-//
-// gui.addColor(params, 'color').onChange(function (val) {
-//
-//     spotLight.color.setHex(val);
-//
-// });
-//
-// gui.add(params, 'intensity', 0, 10).onChange(function (val) {
-//
-//     spotLight.intensity = val;
-//
-// });
-//
-//
-// gui.add(params, 'distance', 50, 200).onChange(function (val) {
-//
-//     spotLight.distance = val;
-//
-// });
-//
-// gui.add(params, 'angle', 0, Math.PI / 3).onChange(function (val) {
-//
-//     spotLight.angle = val;
-//
-// });
-//
-// gui.add(params, 'penumbra', 0, 1).onChange(function (val) {
-//
-//     spotLight.penumbra = val;
-//
-// });
-//
-// gui.add(params, 'decay', 1, 2).onChange(function (val) {
-//
-//     spotLight.decay = val;
-//
-// });
-//
-// gui.add(params, 'focus', 0, 1).onChange(function (val) {
-//
-//     spotLight.shadow.focus = val;
-//
-// });
-//
-//
-// gui.add(params, 'shadows').onChange(function (val) {
-//
-//     renderer.shadowMap.enabled = val;
-//
-//     scene.traverse(function (child) {
-//
-//         if (child.material) {
-//
-//             child.material.needsUpdate = true;
-//
-//         }
-//
-//     });
-//
-// });
-//
-// // let lightHelper = new THREE.SpotLightHelper( spotLight );
-// // scene.add( lightHelper ); don't need the helper anymore
-//
-// gui.open();
 
