@@ -176,8 +176,8 @@ function render() {
 
     if (abstract) {
         if (!potatoMode) {
-            abstract.rotation.y += 0.008 * (targetX - abstract.rotation.y);
-            abstract.rotation.x += 0.008 * (targetY - abstract.rotation.x);
+            abstract.rotation.y += 0.013 * (targetX - abstract.rotation.y);
+            abstract.rotation.x += 0.013 * (targetY - abstract.rotation.x);
             abstract.rotation.z += 0.005;
         }
     }
