@@ -125,17 +125,21 @@ body {
     flex-direction: column;
 
     position: absolute;
-
-    bottom: 0;
-    right: 1.5%;
+    bottom: 1%;
+    right: 0.7%;
 
     z-index: 2;
 
     animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
     animation-delay: 1s;
+
+    background-color: var(--blackish);
+    border-radius: 40px;
+    padding: 10px;
 }
 
 #eye, #eyeSlash {
+    margin: 0; /* there's random margin here idk why */
     width: 30px;
 }
 
