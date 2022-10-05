@@ -7,6 +7,10 @@
     --greyish: #d7d7d7;
 }
 
+* {
+    cursor: none !important;
+}
+
 html,
 body {
     padding: 0;
@@ -17,6 +21,7 @@ body {
     overflow: hidden;
 
     color: var(--white);
+
     /*background-color: var(--black);*/
 }
 
@@ -30,6 +35,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    transition-duration: 1s;
 }
 
 #threeCanvas {
@@ -37,6 +44,22 @@ body {
     margin-left: 42vw;
     margin-bottom: 9.5rem;
     z-index: -1;
+}
+
+#cursor {
+    transition-duration: 1.4s;
+    transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+
+    mix-blend-mode: difference; /* filter */
+    background-color: white;
+    /*filter: invert(100%);*/
+    width: 20px;
+    height: 20px;
+    position: fixed;
+    border-radius: 50%;
+
+    pointer-events: none;
+    z-index: 9999;
 }
 
 #curtain {
@@ -134,7 +157,7 @@ body {
     animation-delay: 1s;
 
     background-color: var(--blackish);
-    border-radius: 40px;
+    border-radius: 50%;
     padding: 10px;
 }
 
@@ -157,7 +180,7 @@ body {
     width: 220px;
 
     background-color: var(--blackish);
-    border-radius: 50px;
+    border-radius: 40px;
 }
 
 .navLinks {

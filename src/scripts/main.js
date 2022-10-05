@@ -66,6 +66,7 @@ $(document).ready(function () {
             </style>
         `;
         $('body').append(html);
+        $('#cursor').css('display', 'none');
     };
     $.changeUI = async function () {
         const introLogo = $('.introLogo')
@@ -79,6 +80,8 @@ $(document).ready(function () {
         $('.block-ui').remove();
         $('body').css('background-color', 'transparent');
         appMount.classList.remove('hidden');
+
+        setTimeout($('#cursor').css('display', 'block'), 1000);
     };
     $.blockUI();
     $(window).on('load', function () {
