@@ -31,20 +31,31 @@
         continue.</strong>
 </noscript>
 <div id="appMount" class="hidden">
+    <div id="curtain"></div>
+    <div class="navContainer">
+        <a href="/">
+            <img class="navLogo fade" src="/img/favicon.png" alt="baostudios logo">
+        </a>
+        <div class="navLinks">
+            <a class="navLink fade" style="animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.6s forwards;" href="/">the works</a>
+            <a class="navLink fade" style="animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.8s forwards;" href="/">about</a>
+            <a class="navLink fade" style="animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 1.0s forwards;" href="/">contact</a>
+        </div>
+    </div>
     <div class="content">
-        <div class="titleName">baostudios.</div>
-        <div class="titleDescription"><strong>This is me - UI/UX designer, developer and curator of chaos.</strong><br>I
+        <div class="titleName fade">baostudios.</div>
+        <div class="titleDescription fade"><strong>this is me - UI/UX designer, developer and curator of chaos.</strong><br>I
             work on creating captivating UI and UX through alluring mediums of self-expression and eloquence.
         </div>
-        <div class="titleSocials">Feel free to say hi and drop by my contacts page! (WIP)</div>
+        <div class="titleSocials fade">feel free to say hi and drop by my contacts page! (wip)</div>
         <!--        <div class="titleBio">This is me. I work on creating captivating UI and UX for a digital age.<br><br>Feel free to say hi and visit my contact page (wip!).</div>-->
         <!--        <div class="titleBio">Hey there, thanks for checking out this site! Unfortunately, it's still very much in development,-->
         <!--            so you'll have to wait a bit until it becomes fully operational.</div>-->
     </div>
-    <div class="footer">
+    <div class="footer fade">
         <div class="footerText">© 2022 baostudios</div>
     </div>
-    <div class="eye">
+    <div class="eye fade">
         <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 256 256" class="disableRender" id="eye">
             <path d="M247.31055,124.75061c-.35157-.79-8.81934-19.57617-27.65332-38.41113C194.57324,61.25256,162.87793,47.99182,128,47.99182S61.42676,61.25256,36.34277,86.33948c-18.834,18.835-27.30175,37.62109-27.65332,38.41113a8.00282,8.00282,0,0,0,0,6.49805c.35157.791,8.82032,19.57226,27.6543,38.40429C61.42773,194.734,93.12207,207.99182,128,207.99182S194.57227,194.734,219.65625,169.653c18.834-18.832,27.30273-37.61328,27.6543-38.40429A8.00282,8.00282,0,0,0,247.31055,124.75061ZM128,92.00061a36,36,0,1,1-36,36A36.04061,36.04061,0,0,1,128,92.00061Z"/>
         </svg>
@@ -56,8 +67,6 @@
     <div id="threeCanvas"></div>
 </div>
 
-<script src="src/scripts/vendor/modernizr-3.11.2.min.js"></script>
-<script src="src/scripts/plugins.js"></script>
 <script type="module" src="src/scripts/render.js"></script>
 <script type="module" src="src/scripts/main.js"></script>
 <script> </script>

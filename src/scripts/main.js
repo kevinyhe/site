@@ -21,6 +21,10 @@ $(document).ready(function () {
                 </div>
             </div>
             <style>
+                body {
+                    background-color: var(--black);
+                }
+                
                 .block-ui {
                     display: flex;
                     flex-direction: column;
@@ -73,6 +77,7 @@ $(document).ready(function () {
         // remove the block from the DOM
         // then update the body css to change the background colour
         $('.block-ui').remove();
+        $('body').css('background-color', 'transparent');
         appMount.classList.remove('hidden');
     };
     $.blockUI();

@@ -2,6 +2,7 @@
 
 :root {
     --black: #060606;
+    --blackish: #121212;
     --white: #eee;
     --greyish: #d7d7d7;
 }
@@ -16,7 +17,11 @@ body {
     overflow: hidden;
 
     color: var(--white);
-    background-color: var(--black);
+    /*background-color: var(--black);*/
+}
+
+.fade {
+    opacity: 0;
 }
 
 #appMount {
@@ -31,6 +36,20 @@ body {
     position: absolute;
     margin-left: 42vw;
     margin-bottom: 9.5rem;
+    z-index: -1;
+}
+
+#curtain {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--black);
+
+    right: 0;
+
+    z-index: 999;
+
+    animation: curtain 1s cubic-bezier(0.83, 0.15, 0.82, 0.19) forwards;
 }
 
 .content {
@@ -45,7 +64,8 @@ body {
     font-size: 95px;
     font-weight: 600;
 
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 1s;
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.3s forwards;
+    animation-delay: 0.6s;
 }
 
 .titleDescription {
@@ -53,14 +73,16 @@ body {
     margin-top: -30px;
     font-size: 14px;
 
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 1.5s;
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
+    animation-delay: 0.7s;
 }
 
 .titleSocials {
     margin-top: 10px;
     font-size: 12px;
 
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 2s;
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.8s forwards;
+    animation-delay: 0.8s;
 }
 
 .titleDescription strong {
@@ -94,7 +116,8 @@ body {
     left: 1.5%;
     z-index: 2;
 
-    animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 1s;
+    animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
+    animation-delay: 0.2s;
 }
 
 .eye {
@@ -108,11 +131,63 @@ body {
 
     z-index: 2;
 
-    animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 1.5s;
+    animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
+    animation-delay: 1s;
 }
 
 #eye, #eyeSlash {
     width: 30px;
+}
+
+.navContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    top: 1.5%;
+    left: 0.5%;
+    position: absolute;
+
+    padding: 5px 6px 5px 6px;
+
+    width: 220px;
+
+    background-color: var(--blackish);
+    border-radius: 50px;
+}
+
+.navLinks {
+    flex-direction: column;
+    justify-content: space-around;
+    width: 180px;
+
+    margin-left: 10px;
+}
+
+.navLogo {
+    width: 25px;
+
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.7s forwards;
+}
+
+
+.navLinks a {
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.navLinks a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.navLink {
+    color: var(--greyish);
+    padding-right: 6px;
+}
+
+.navLink:last-child {
+    padding-right: 0;
 }
 
 .footerText {
@@ -126,7 +201,6 @@ body {
 
 @keyframes fade-in-top {
     from {
-        opacity: 0;
         transform: translateY(-30px) scale(0.85);
         filter: blur(20px);
     }
@@ -140,7 +214,6 @@ body {
 
 @keyframes fade-in-bottom {
     from {
-        opacity: 0;
         transform: translateY(30px) scale(0.85);
         filter: blur(20px);
     }
@@ -150,6 +223,17 @@ body {
         transform: translateY(0) scale(1);
         filter: blur(0);
     }
+}
+
+@keyframes curtain {
+    from {
+        width: 100%;
+    }
+
+    to {
+        width: 0;
+    }
+
 }
 
 
