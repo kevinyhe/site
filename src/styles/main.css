@@ -41,9 +41,11 @@ body {
 
 #threeCanvas {
     position: absolute;
-    margin-left: 42vw;
+    margin-left: 85vh;
     margin-bottom: 9.5rem;
     z-index: -1;
+
+    width: 150vw;
 }
 
 #cursor {
@@ -172,8 +174,8 @@ body {
     align-items: center;
 
     top: 1.5%;
-    left: 0.5%;
-    position: absolute;
+    left: 0.75%;
+    position: fixed !important;
 
     padding: 5px 6px 5px 6px;
 
