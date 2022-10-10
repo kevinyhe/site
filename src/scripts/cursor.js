@@ -1,4 +1,7 @@
+const cursor = document.getElementById('cursor');
+
 $(document).on('mousemove', function (e) {
+    cursor.classList.remove('hidden');
     const mouseY = e.clientY;
     const mouseX = e.clientX;
 
