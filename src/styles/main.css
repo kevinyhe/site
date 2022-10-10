@@ -45,7 +45,7 @@ body {
     margin-bottom: 9.5rem;
     z-index: -1;
 
-    width: 150vw;
+    /*min-wid=: 150vw;*/
 }
 
 #cursor {
@@ -135,7 +135,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    position: absolute;
+    position: fixed;
 
     bottom: 1.5%;
     left: 1.5%;
@@ -149,7 +149,7 @@ body {
     display: flex;
     flex-direction: column;
 
-    position: absolute;
+    position: fixed;
     bottom: 1%;
     right: 0.7%;
 
@@ -266,24 +266,46 @@ body {
 
 }
 
+@media screen and (max-width: 1400px) {
+    #threeCanvas {
+        margin-left: 0;
+    }
+}
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 900px) {
     .content {
         position: absolute;
         bottom: 10%;
         left: 10%;
         margin-right: 0;
     }
+
     .titleName {
-        position: fixed;
-        top: 5%;
-        font-size: 10vw;
+        visibility: hidden;
+        top: 0;
+        position: fixed !important;
+    }
+
+    .titleName::after {
+        visibility: visible;
+        display: block;
+        content: "bao\Astudios.";
+
+        white-space: pre-wrap;
+        line-height: 1;
+        font-size: 20vw;
     }
 
     .titleDescription {
         margin-top: 0;
-        width: 15rem;
+        width: 240px;
     }
+
+    /*.navContainer {*/
+    /*    !*left: auto;*!*/
+    /*    !*margin-left: auto;*!*/
+    /*    position: fixed !important;*/
+    /*}*/
 
     .titleDescription strong {
         /*margin-top: 10px;*/
