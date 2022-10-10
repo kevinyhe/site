@@ -93,9 +93,10 @@ body {
     animation-delay: 0.6s;
 }
 
-.titleDescription {
+.titleDescription, .titleAbout {
     width: 27rem;
-    margin-top: -30px;
+    /*width: 27rem;*/
+    margin-top: 8px;
     font-size: 14px;
 
     animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
@@ -110,10 +111,10 @@ body {
     animation-delay: 0.8s;
 }
 
-.titleDescription strong {
+.titleAbout {
+    margin-top: -10px;
+    width: 30rem;
     font-weight: 650;
-    line-height: 3;
-    /*line-height: ;*/
 }
 
 .titleBio {
@@ -266,7 +267,7 @@ body {
 
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (max-width: 1200px) {
     #threeCanvas {
         margin-left: 0;
     }
