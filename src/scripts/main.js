@@ -77,8 +77,7 @@ function unblockUI() {
     $('#blockUI').remove();
     $('.body').css('background-color', 'transparent');
     appMount.classList.remove('hidden');
-
-    setTimeout($('#cursor').css('display', 'block'), 1000);
+    $('#cursor').css('display', 'block')
 }
 
 /** some stuff for document loading including the transition
