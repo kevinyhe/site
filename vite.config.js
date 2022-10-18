@@ -24,6 +24,7 @@ export default defineConfig({
 	appType: "mpa", // disable history fallback
 	plugins: [rewriteSlashToIndexHtml()],
 	build: {
+		outDir: '../dist', // so the dist goes in the root not /src
 		rollupOptions: {
 			input: {
 				main: resolve(root, "index.html"),
