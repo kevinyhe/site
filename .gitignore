@@ -16,6 +16,9 @@ dist-ssr
 .vscode/*
 !.vscode/extensions.json
 .idea
+# thank you so much jetbrains
+# 👎
+.fleet
 .DS_Store
 *.suo
 *.ntvs*
