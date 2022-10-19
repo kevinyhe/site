@@ -3,14 +3,14 @@ const appMount = document.getElementById('appMount');
 function blockUI() {
     const html = `<div id="blockUI">
             <div class="blockUI-content">
-                <svg class="introLogo" viewBox="0 0 915 742" fill="#FFFFFF" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+                <svg class="introLogo" viewBox="0 0 915 742" xmlns="http://www.w3.org/2000/svg" overflow="visible">
                     <g class="logoLeft normal">
                         <path d="M0 254.224L235.183 741.057L409.125 654.601L585.127 160.048L493.524 0L313.92 302.598L0 254.224Z"
-                            />
+                        fill="#FFFFFF"/>
                     </g>
                     <g class="logoRight normal">
                         <path d="M687.022 336.049L610.858 212.539L458.529 635.56L833.175 445.149L915 251.651L687.022 336.049Z"
-                            />
+                        fill="#FFFFFF"/>
                     </g>
                 </svg>
             </div>

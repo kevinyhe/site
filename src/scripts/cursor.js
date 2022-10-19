@@ -21,5 +21,5 @@ function unBlurWindow () {
 $(window).on('focus', unBlurWindow);
 $(window).on('blur', blurWindow);
 
-$(document).mouseleave(blurWindow);
-$(document).mouseenter(unBlurWindow);
+$(document).on('mouseleave', blurWindow);
+$(document).on('mouseenter', unBlurWindow);

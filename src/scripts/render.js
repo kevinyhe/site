@@ -48,7 +48,7 @@ function init() {
     spotLight.angle = 1.0471975511965976;
     spotLight.penumbra = 1;
     spotLight.decay = 2;
-    spotLight.distance = 80;
+    spotLight.distance = 65;
     spotLight.map = metallicTexture;
 
     spotLight.castShadow = true;

@@ -11,8 +11,10 @@
  */
 
 html {
-    line-height: 1.15; /* 1 */
-    -webkit-text-size-adjust: 100%; /* 2 */
+    line-height: 1.15;
+    /* 1 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */
 }
 
 /* Sections
@@ -53,9 +55,12 @@ h1 {
  */
 
 hr {
-    box-sizing: content-box; /* 1 */
-    height: 0; /* 1 */
-    overflow: visible; /* 2 */
+    box-sizing: content-box;
+    /* 1 */
+    height: 0;
+    /* 1 */
+    overflow: visible;
+    /* 2 */
 }
 
 /**
@@ -64,8 +69,10 @@ hr {
  */
 
 pre {
-    font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: 1em;
+    /* 2 */
 }
 
 /* Text-level semantics
@@ -85,8 +92,10 @@ a {
  */
 
 abbr[title] {
-    border-bottom: none; /* 1 */
-    text-decoration: underline; /* 2 */
+    border-bottom: none;
+    /* 1 */
+    text-decoration: underline;
+    /* 2 */
     /* 2 */
 }
 
@@ -107,8 +116,10 @@ strong {
 code,
 kbd,
 samp {
-    font-family: monospace, monospace; /* 1 */
-    font-size: 1em; /* 2 */
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: 1em;
+    /* 2 */
 }
 
 /**
@@ -164,10 +175,14 @@ input,
 optgroup,
 select,
 textarea {
-    font-family: inherit; /* 1 */
-    font-size: 100%; /* 1 */
-    line-height: 1.15; /* 1 */
-    margin: 0; /* 2 */
+    font-family: inherit;
+    /* 1 */
+    font-size: 100%;
+    /* 1 */
+    line-height: 1.15;
+    /* 1 */
+    margin: 0;
+    /* 2 */
 }
 
 /**
@@ -176,7 +191,8 @@ textarea {
  */
 
 button,
-input { /* 1 */
+input {
+    /* 1 */
     overflow: visible;
 }
 
@@ -186,7 +202,8 @@ input { /* 1 */
  */
 
 button,
-select { /* 1 */
+select {
+    /* 1 */
     text-transform: none;
 }
 
@@ -240,12 +257,18 @@ fieldset {
  */
 
 legend {
-    box-sizing: border-box; /* 1 */
-    color: inherit; /* 2 */
-    display: table; /* 1 */
-    max-width: 100%; /* 1 */
-    padding: 0; /* 3 */
-    white-space: normal; /* 1 */
+    box-sizing: border-box;
+    /* 1 */
+    color: inherit;
+    /* 2 */
+    display: table;
+    /* 1 */
+    max-width: 100%;
+    /* 1 */
+    padding: 0;
+    /* 3 */
+    white-space: normal;
+    /* 1 */
 }
 
 /**
@@ -271,8 +294,10 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
-    box-sizing: border-box; /* 1 */
-    padding: 0; /* 2 */
+    box-sizing: border-box;
+    /* 1 */
+    padding: 0;
+    /* 2 */
 }
 
 /**
@@ -290,8 +315,10 @@ textarea {
  */
 
 [type="search"] {
-    -webkit-appearance: textfield; /* 1 */
-    outline-offset: -2px; /* 2 */
+    -webkit-appearance: textfield;
+    /* 1 */
+    outline-offset: -2px;
+    /* 2 */
 }
 
 /**
@@ -308,8 +335,10 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-    -webkit-appearance: button; /* 1 */
-    font: inherit; /* 2 */
+    -webkit-appearance: button;
+    /* 1 */
+    font: inherit;
+    /* 2 */
 }
 
 /* Interactive
@@ -545,6 +574,7 @@ textarea {
    ========================================================================== */
 
 @media print {
+
     *,
     *::before,
     *::after {
@@ -561,11 +591,11 @@ textarea {
     }
 
     a[href]::after {
-        content: " (" attr(href) ")";
+        content: " ("attr(href) ")";
     }
 
     abbr[title]::after {
-        content: " (" attr(title) ")";
+        content: " ("attr(title) ")";
     }
 
     /*
@@ -623,12 +653,35 @@ textarea {
     --blackish: #121212;
     --white: #eee;
     --greyish: #d7d7d7;
+    --pinkish: #fd95d0;
+    --dark-grey: rgba(18, 18, 18, 0.7);
     --font: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
     cursor: none !important;
+}
+
+a {
+    transition-duration: 200ms;
+    color: var(--pinkish);
+    text-decoration: none;
+    padding-left: 2px;
+    padding-right: 2px;
+    border-radius: 4px;
+}
+
+a:hover {
+    /* color: var(--white); */
+    background: rgba(64, 64, 64, 1) none repeat scroll 0% 0%;
+}
+
+a:focus {
+    background: rgba(64, 64, 64, 1) none repeat scroll 0% 0%;
+    text-decoration: underline;
+    outline: none;
+    /* stupid */
 }
 
 html,
@@ -636,12 +689,12 @@ body {
     padding: 0;
     margin: 0;
     font-family: var(--font),
-    sans-serif;
+        sans-serif;
     overflow: hidden;
 
     color: var(--white);
 
-    /*background-color: var(--black);*/
+    background-color: var(--black);
 }
 
 .fade {
@@ -658,6 +711,20 @@ body {
     transition-duration: 1s;
 }
 
+#noiseBg {
+    animation: grain 4s steps(10) infinite;
+    background: url("/img/noise.png");
+    height: 300%;
+    width: 300%;
+    left: -50%;
+    top: -125%;
+    opacity: 0.10;
+    position: fixed;
+    z-index: 1000;
+
+    pointer-events: none
+}
+
 #threeCanvas {
     position: absolute;
     margin-left: 85vh;
@@ -671,8 +738,9 @@ body {
     transition-duration: 1.4s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
-    mix-blend-mode: difference; /* filter */
-    background-color: white;
+    mix-blend-mode: difference;
+    /* filter */
+    background-color: var(--white);
     /*filter: invert(100%);*/
     width: 20px;
     height: 20px;
@@ -716,6 +784,10 @@ body {
     animation-delay: 0.6s;
 }
 
+.titleName strong {
+    color: var(--pinkish);
+}
+
 .titleDescription, .titleAbout {
     width: 27rem;
     /*width: 27rem;*/
@@ -735,16 +807,16 @@ body {
 }
 
 .titleAbout {
-    margin-top: -10px;
+    margin-top: -15px;
     width: 30rem;
     font-weight: 650;
 }
 
 .titleBio {
-    margin-top: 0;
+    /* margin-top: 10px; */
     color: var(--white);
     font-size: 14px;
-    text-wrap: normal;
+    /* text-wrap: normal; */
     width: 22rem;
 }
 
@@ -757,6 +829,7 @@ body {
 
 .footer {
     display: flex;
+    user-select: none;
     flex-direction: column;
 
     position: fixed;
@@ -767,6 +840,15 @@ body {
 
     animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
     animation-delay: 0.2s;
+}
+
+.footerText strong {
+    color: var(--pinkish);
+}
+
+.footerText {
+    color: var(--white);
+    font-size: 12px;
 }
 
 .eye {
@@ -788,7 +870,8 @@ body {
 }
 
 #eye, #eyeSlash {
-    margin: 0; /* there's random margin here idk why */
+    margin: 0;
+    /* there's random margin here idk why */
     width: 30px;
 }
 
@@ -801,12 +884,15 @@ body {
     left: 0.75%;
     position: fixed !important;
 
-    padding: 5px 6px 5px 6px;
+    padding: 5px 6px 8px 6px;
+    user-select: none;
 
     /*width: 220px;*/
 
-    background-color: var(--blackish);
-    border-radius: 40px;
+    background-color: rgba(18, 18, 18, 0.7);
+    border-radius: 5px;
+
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
 }
 
 .navLinks {
@@ -819,34 +905,31 @@ body {
 }
 
 .navLogo {
-    width: 25px;
+    padding-left: 5px;
+    width: 20px;
 
     animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.7s forwards;
 }
 
-
 .navLinks a {
+    color: var(--greyish);
     text-decoration: none;
     font-size: 14px;
 }
 
 .navLinks a:hover {
-    color: var(--white);
-    text-decoration: underline;
+    background: none;
+    color: var(--pinkish);
 }
 
 .navLink {
-    color: var(--greyish);
-    padding-right: 6px;
+    transition-duration: 200ms;
+    color: var(--white);
+    margin-right: 6px;
 }
 
 .navLink:last-child {
-    padding-right: 0;
-}
-
-.footerText {
-    font-size: 12px;
-    color: var(--greyish);
+    margin-right: 0;
 }
 
 .hidden {
@@ -945,3 +1028,44 @@ body {
     }
 }
 
+@keyframes grain {
+    0%, 100% {
+        transform: translate(0, 0)
+    }
+
+    10% {
+        transform: translate(-5%, -10%)
+    }
+
+    20% {
+        transform: translate(-15%, 5%)
+    }
+
+    30% {
+        transform: translate(7%, -25%)
+    }
+
+    40% {
+        transform: translate(-5%, 25%)
+    }
+
+    50% {
+        transform: translate(-15%, 10%)
+    }
+
+    60% {
+        transform: translate(15%, 0%)
+    }
+
+    70% {
+        transform: translate(0%, 15%)
+    }
+
+    80% {
+        transform: translate(3%, 35%)
+    }
+
+    90% {
+        transform: translate(-10%, 10%)
+    }
+}
