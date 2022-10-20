@@ -21,8 +21,8 @@ const rewriteSlashToIndexHtml = () => {
 
 export default defineConfig({
 	root,
-	appType: "mpa", // disable history fallback
-	plugins: [rewriteSlashToIndexHtml()],
+	// appType: "mpa", // disable history fallback
+	// plugins: [rewriteSlashToIndexHtml()],
 	build: {
 		outDir: '../dist', // so the dist goes in the root not /src
 		emptyOutDir: true,

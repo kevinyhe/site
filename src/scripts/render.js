@@ -21,6 +21,20 @@ let potatoMode = false;
 init();
 
 function init() {
+    renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        // shininess: 100,
+        // alpha: true, // this allows the background to be layered onto the DOM content
+    });
+    renderer.setPixelRatio(window.devicePixelRatio);
+    renderer.setSize(window.innerWidth * 1.5, window.innerHeight * 1.5);
+    renderer.setAnimationLoop(render);
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    renderer.outputEncoding = THREE.sRGBEncoding;
+    renderer.toneMapping = THREE.ACESFilmicToneMapping;
+    DOMCanvas.appendChild(renderer.domElement);
+
     scene = new THREE.Scene();
 
     camera = new THREE.PerspectiveCamera(26, window.innerWidth / window.innerHeight, 1, 1000);
@@ -92,20 +106,6 @@ function init() {
 
     window.addEventListener('resize', onWindowResize);
 
-    renderer = new THREE.WebGLRenderer({
-        antialias: true,
-        // shininess: 100,
-        // alpha: true, // this allows the background to be layered onto the DOM content
-    });
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth * 1.5, window.innerHeight * 1.5);
-    renderer.setAnimationLoop(render);
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    renderer.outputEncoding = THREE.sRGBEncoding;
-    renderer.toneMapping = THREE.ACESFilmicToneMapping;
-    DOMCanvas.appendChild(renderer.domElement);
-
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enabled = false; // okay basically I can't remove the orbit controls because I'm an idiot
     // and whenever I try to do it the camera just goes wonk and I don't know why
@@ -115,11 +115,10 @@ function init() {
     controls.update();
 
     document.addEventListener('mousemove', onDocumentMouseMove);
-
+    window.requestAnimationFrame(render);
 }
 
 $('.eye').on('click', function () {
-    console.log(potatoMode);
     potatoMode ? potatoMode = false : potatoMode = true;
 });
 
