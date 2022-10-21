@@ -93,7 +93,7 @@ body {
     width: 300%;
     left: -50%;
     top: -125%;
-    opacity: 0.10;
+    opacity: 0.12;
     position: fixed;
     z-index: 1000;
 
@@ -436,12 +436,7 @@ body {
 }
 
 @media screen and (max-width: 900px) {
-    .content {
-        position: absolute;
-        bottom: 10%;
-        left: 10%;
-        margin-right: 0;
-    }
+
 }
 
 @keyframes grain {
