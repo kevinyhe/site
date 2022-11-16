@@ -18,7 +18,7 @@ const windowHalfY = window.innerHeight / 2;
 
 let potatoMode = false;
 
-init();
+// init();
 
 function init() {
     renderer = new THREE.WebGLRenderer({

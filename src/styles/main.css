@@ -12,7 +12,7 @@
     --pinkish: #fd95d0;
     --dark-grey: rgba(18, 18, 18, 0.7);
     --font: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-        Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
@@ -30,11 +30,11 @@ a {
 
 a:hover {
     /* color: var(--white); */
-    background: rgba(64, 64, 64, 1) none repeat scroll 0% 0%;
+    background: rgba(200, 200, 200, 0.2) none repeat scroll 0% 0%;
 }
 
 a:focus {
-    background: rgba(64, 64, 64, 1) none repeat scroll 0% 0%;
+    background: rgba(200, 200, 200, 0.2) none repeat scroll 0% 0%;
     text-decoration: underline;
     outline: none;
     /* stupid */
@@ -45,7 +45,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: var(--font),
-        sans-serif;
+    sans-serif;
     overflow: hidden;
 
     color: var(--white);
@@ -72,9 +72,9 @@ body {
     width: 100%;
     height: 100%;
     --gradient-color-1: #ef008f;
-    --gradient-color-2: #ff903e;
-    --gradient-color-3: #7038ff;
-    --gradient-color-4: #27beff;
+    --gradient-color-2: #fb9209;
+    --gradient-color-3: #c989ff;
+    --gradient-color-4: #547cff;
     z-index: 0;
 }
 
@@ -133,23 +133,53 @@ body {
 }
 
 .content {
+    height: 100vh;
+    /*height: 100%;*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
     position: relative;
     z-index: 1;
 
-    margin-top: 200px;
-    margin-right: 30vw;
+    /*transform: translateX(200px);*/
+
+    /*margin-top: 200px;*/
+    /*margin-right: 30vw;*/
 }
 
-.titleName {
-    font-size: 95px;
+.desc {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    /*transform: translate(-25vw, -60px);*/
+    /*margin-right: 250px;*/
+}
+
+.title {
+    /*transform: translate(10vw);*/
+}
+
+.titleName, .bigTitleName {
+    user-select:none;
+
+    font-size: 156px;
     font-weight: 600;
 
     /*font-family: 'DM Sans', var(--font);*/
     /*letter-spacing: -5px;*/
     font-family: 'Poppins', var(--font);
+    animation: slide-in-left cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
 
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.3s forwards;
-    animation-delay: 0.8s;
+    line-height: 0.8;
+}
+
+
+.bigTitleName {
+    animation-duration: 1.3s;
+    animation-delay: 0.3s;
+    font-size: 164px;
 }
 
 .titleName strong {
@@ -157,22 +187,30 @@ body {
 }
 
 .titleDescription, .titleAbout {
+    text-align: right;
+    user-select: none;
+
     width: 27rem;
     /*width: 27rem;*/
     margin-top: 8px;
     font-size: 14px;
     overflow-wrap: normal;
 
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
-    animation-delay: 0.9s;
+    animation: slide-in-right cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
+    /*animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;*/
+    animation-delay: 0.05s;
 }
 
 .titleSocials {
+    text-align: right;
+    user-select: none;
+
     margin-top: 10px;
     font-size: 12px;
 
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.8s forwards;
-    animation-delay: 1s;
+    animation: slide-in-right cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
+    /*animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.8s forwards;*/
+    animation-delay: 0.2s;
 }
 
 .titleAbout {
@@ -180,6 +218,7 @@ body {
     margin-top: -15px;
     width: 30rem;
     font-weight: 650;
+    animation-delay: 0.1s;
 }
 
 .titleBio {
@@ -197,28 +236,13 @@ body {
     margin-bottom: 20px;
 }
 
-.footer {
-    display: flex;
-    user-select: none;
-    flex-direction: column;
+.line {
+    border-right: 2px var(--white) solid;
+    height: 0;
+    transform: rotate(-50deg);
 
-    position: fixed;
-
-    bottom: 1.5%;
-    left: 1.5%;
-    z-index: 2;
-
-    animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
-    animation-delay: 0.2s;
-}
-
-.footerText strong {
-    color: var(--pinkish);
-}
-
-.footerText {
-    color: var(--white);
-    font-size: 12px;
+    animation: expand 1s cubic-bezier(0.23, 0.66, 0.19, 0.99) forwards;
+    animation-delay: 0.6s;
 }
 
 .eye {
@@ -226,8 +250,8 @@ body {
     flex-direction: column;
 
     position: fixed;
-    bottom: 1%;
-    right: 0.7%;
+    bottom: 15px;
+    right: 15px;
 
     z-index: 2;
 
@@ -245,6 +269,30 @@ body {
     width: 30px;
 }
 
+.footer {
+    display: flex;
+    user-select: none;
+    flex-direction: column;
+
+    position: absolute;
+
+    bottom: 10px;
+    left: 10px;
+    z-index: 2;
+
+    animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
+    animation-delay: 0.2s;
+}
+
+.footerText strong {
+    color: var(--pinkish);
+}
+
+.footerText {
+    color: var(--white);
+    font-size: 12px;
+}
+
 .navContainer {
     display: flex;
     flex-direction: row;
@@ -257,9 +305,11 @@ body {
     padding: 5px 6px 8px 6px;
     user-select: none;
 
+    z-index: 999;
+
     /*width: 220px;*/
 
-    background: rgba(18, 18, 18, 0.7);
+    background: rgba(200, 200, 200, 0.2);
     border-radius: 5px;
 
     animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
@@ -277,11 +327,24 @@ body {
     margin-right: 10px;
 }
 
-.navLogo {
+.navLogo, .socialsLogo {
     padding: 3px 3px;
-    width: 20px;
+    /* width: 20px; */
 
     animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.7s forwards;
+}
+
+.socialsLogo {
+    width: 300px;
+    overflow: visible;
+    animation: wobble 4s ease-in-out infinite alternate;
+
+    margin-bottom: 80px;
+    filter: drop-shadow(0px 0px 25px var(--pinkish));
+}
+
+.navLogo {
+    width: 20px;
 }
 
 .navLinks a {
@@ -311,6 +374,28 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+@keyframes slide-in-right {
+    from {
+        filter: blur(20px);
+        transform: translateX(100%) scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        filter: blur(20px);
+        transform: translateX(-100%) scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes fade-in-top {
@@ -365,6 +450,19 @@ body {
     }
 }
 
+@keyframes expand {
+    from {
+        transform: rotate(50deg);
+        height: 0;
+    }
+
+    to {
+        transform: rotate(-50deg);
+
+        height: 500px;
+    }
+}
+
 @keyframes curtain {
     from {
         transform: translateX(100%);
@@ -396,47 +494,54 @@ body {
 @media screen and (max-width: 900px) {
     .content {
         position: absolute;
-        bottom: 10%;
-        left: 10%;
-        margin-right: 0;
+        /*bottom: 10%;*/
+        /*left: 10%;*/
+        /*margin-right: 0;*/
+        flex-direction: column;
     }
 
-    .titleName {
-        visibility: hidden;
-        top: 0;
-        position: fixed !important;
+    .title {
+        /*visibility: hidden;*/
+        /*left: 10%;*/
+        /*top: 10%;*/
+        /*position: fixed !important;*/
+        margin: 0;
     }
 
-    .titleName::after {
-        visibility: visible;
-        display: block;
-        content: "bao\Astudios.";
-
+    .titleName, .bigTitleName {
+        text-align: center !important;
         white-space: pre-wrap;
-        line-height: 1;
         font-size: 20vw;
+        line-height: 0.8;
+    }
+
+    .desc {
+        margin-top: 30px;
+        align-items: center;
+        justify-content: center;
     }
 
     .titleDescription {
         margin-top: 0;
         width: 240px;
-    }
+        text-align: center !important;
 
-    /*.navContainer {*/
-    /*    !*left: auto;*!*/
-    /*    !*margin-left: auto;*!*/
-    /*    position: fixed !important;*/
-    /*}*/
+    }
 
     .titleDescription strong {
         /*margin-top: 10px;*/
-        width: 15rem;
+        width: 250px;
         line-height: 1.6;
     }
 
     .titleBio, .titleSocials, .titleAbout {
         overflow-wrap: normal;
-        width: 15rem;
+        width: 250px;
+        text-align: center !important;
+    }
+
+    .titleSocials {
+        width: 272px;
     }
 }
 

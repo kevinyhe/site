@@ -49,11 +49,11 @@ a {
 
 a:hover {
     /* color: var(--white); */
-    background: rgba(64, 64, 64, 1) none repeat scroll 0 0;
+    background: rgba(200, 200, 200, 0.2) none repeat scroll 0% 0%;
 }
 
 a:focus {
-    background: rgba(64, 64, 64, 1) none repeat scroll 0 0;
+    background: rgba(200, 200, 200, 0.2) none repeat scroll 0% 0%;
     text-decoration: underline;
     outline: none;
     /* stupid */
@@ -92,10 +92,10 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
-    --gradient-color-1: #b01cc7;
-    --gradient-color-2: #d13099;
+    --gradient-color-1: #1cadc7;
+    --gradient-color-2: #775ced;
     --gradient-color-3: #7038ff;
-    --gradient-color-4: #ec4040;
+    --gradient-color-4: #db40ec;
     z-index: 0;
 }
 
@@ -159,11 +159,11 @@ body {
     content: "contact";
     display: flex;
 
-    font-family: "Poppins", var(--font);
-    font-size: 155px;
+    font-family: "DM Serif Display", var(--font);
+    font-size: 185px;
     font-weight: 1000;
 
-    transform: rotateX(180deg) translateY(55%);
+    transform: rotateX(180deg) translateY(50%);
     background: rgba(200, 200, 200, 0.15);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -175,7 +175,7 @@ body {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    animation: infiniteScroll 15s linear infinite !important;
+    animation: infiniteScroll 15s linear infinite;
 }
 
 .socialsContainerMirror {
@@ -183,7 +183,7 @@ body {
     flex-direction: column;
     align-items: center;
     position: absolute;
-    animation: infiniteScrollGhost 15s linear infinite !important;
+    animation: infiniteScrollGhost 15s linear infinite;
 }
 
 .socialComponent {

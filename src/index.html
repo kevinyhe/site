@@ -30,56 +30,62 @@
     <strong>We're sorry but baostudios doesn't work properly without JavaScript enabled. Please enable it to
         continue.</strong>
 </noscript>
-<div id="cursor" class="hidden"></div>
+<div id="cursor"></div>
 <div id="noiseBg" style="background-position: 3% 81%;"></div>
 <canvas id="gradient-canvas" data-js-darken-top data-transition-in></canvas>
-<div id="curtain"></div>
-<div id="appMount" class="hidden">
+<!--<div id="curtain"></div>-->
+<div id="appMount">
+    <div class="navContainer fade">
+        <a style="background: none !important;" href="/">
+            <svg class="navLogo fade" viewBox="0 0 915 742" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+                <path d="M0 254.224L235.183 741.057L409.125 654.601L585.127 160.048L493.524 0L313.92 302.598L0 254.224Z"
+                    fill="var(--pinkish)"/>
+                <path d="M687.022 336.049L610.858 212.539L458.529 635.56L833.175 445.149L915 251.651L687.022 336.049Z"
+                    fill="var(--pinkish)"/>
+            </svg>
+        </a>
+        <div class="navLinks">
+            <a class="navLink fade" tabindex="1"
+               style="animation: fade-in-left cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.2s forwards;" href="/">home</a>
+            <a class="navLink fade" tabindex="1"
+               style="animation: fade-in-left cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.4s forwards;" href="/">the
+                works</a>
+            <a class="navLink fade" tabindex="1"
+               style="animation: fade-in-left cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;"
+               href="/">about</a>
+            <a class="navLink fade" tabindex="1"
+               style="animation: fade-in-left cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.6s forwards;" href="/contact">contact</a>
+        </div>
+    </div>
     <div class="content">
-        <div class="navContainer fade">
-            <a style="background: none !important;" href="/">
-                <svg class="navLogo fade" viewBox="0 0 915 742" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-                    <path d="M0 254.224L235.183 741.057L409.125 654.601L585.127 160.048L493.524 0L313.92 302.598L0 254.224Z"
-                        fill="var(--pinkish)"/>
-                    <path d="M687.022 336.049L610.858 212.539L458.529 635.56L833.175 445.149L915 251.651L687.022 336.049Z"
-                        fill="var(--pinkish)"/>
-                </svg>
-            </a>
-            <div class="navLinks">
-                <a class="navLink fade" tabindex="1"
-                   style="animation: fade-in-left cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.2s forwards;" href="/">home</a>
-                <a class="navLink fade" tabindex="1"
-                   style="animation: fade-in-left cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.4s forwards;" href="/">the
-                    works</a>
-                <a class="navLink fade" tabindex="1"
-                   style="animation: fade-in-left cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;"
-                   href="/">about</a>
-                <a class="navLink fade" tabindex="1"
-                   style="animation: fade-in-left cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.6s forwards;" href="/contact">contact</a>
+        <div class="title">
+            <div class="bigTitleName fade">bao</div>
+            <div class="titleName fade">studios<strong>.</strong></div>
+        </div>
+        <div class="line"></div>
+        <div class="desc">
+            <div class="titleAbout fade">This is me - UI/UX designer, developer and curator of chaos.</div>
+            <div class="titleDescription fade">I work on creating captivating UI and UX through alluring mediums of self-expression and eloquence.
             </div>
+            <div class="titleSocials fade">Feel free to say hi and drop by my <a tabindex="1" href="/contact">social page</a></div>
         </div>
-        <div class="titleName fade">baostudios<strong>.</strong></div>
-        <div class="titleAbout fade">This is me - UI/UX designer, developer and curator of chaos.</div>
-        <div class="titleDescription fade">I work on creating captivating UI and UX through alluring mediums of self-expression and eloquence.
-        </div>
-        <div class="titleSocials fade">Feel free to say hi and drop by my <a tabindex="1" href="/contact">social page</a></div>
         <!--                <div class="titleBio">Hey there, thanks for checking out this site! Unfortunately, it's still very much in development,-->
         <!--                    so you'll have to wait a bit until it becomes fully operational.</div>-->
     </div>
     <div class="footer fade">
         <div class="footerText">&#169; 2022 <strong>baostudios</strong></div>
     </div>
-    <div class="eye fade">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 256 256" class="disableRender" id="eye">
-            <path d="M247.31055,124.75061c-.35157-.79-8.81934-19.57617-27.65332-38.41113C194.57324,61.25256,162.87793,47.99182,128,47.99182S61.42676,61.25256,36.34277,86.33948c-18.834,18.835-27.30175,37.62109-27.65332,38.41113a8.00282,8.00282,0,0,0,0,6.49805c.35157.791,8.82032,19.57226,27.6543,38.40429C61.42773,194.734,93.12207,207.99182,128,207.99182S194.57227,194.734,219.65625,169.653c18.834-18.832,27.30273-37.61328,27.6543-38.40429A8.00282,8.00282,0,0,0,247.31055,124.75061ZM128,92.00061a36,36,0,1,1-36,36A36.04061,36.04061,0,0,1,128,92.00061Z"/>
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 256 256" class="disableRender"
-             id="eyeSlash">
-            <path xmlns="http://www.w3.org/2000/svg"
-                  d="M247.31055,131.25647c-.41992.94531-10.54688,23.37207-33.35938,43.80566a8.00126,8.00126,0,0,1-11.25781-.57715L101.40234,63.06506a8.00028,8.00028,0,0,1,4.60254-13.27246A133.97063,133.97063,0,0,1,128,47.99963c34.87793,0,66.57324,13.26075,91.65723,38.34766,18.834,18.83594,27.30175,37.62109,27.65332,38.41113A8.00282,8.00282,0,0,1,247.31055,131.25647ZM213.91992,210.6178a8.0006,8.0006,0,0,1-11.83984,10.76367l-22.01441-24.21582A126.97091,126.97091,0,0,1,128,207.99963c-34.87793,0-66.57227-13.25781-91.65625-38.33886-18.834-18.832-27.30273-37.61329-27.6543-38.4043a8.00282,8.00282,0,0,1,0-6.49805c.69556-1.564,16.31079-35.9209,52.63184-58.21191l-19.24121-21.165A8.0006,8.0006,0,1,1,53.91992,34.6178ZM145.6814,159.34289l-47.20459-51.9248a35.98114,35.98114,0,0,0,47.20459,51.9248Z"/>
-        </svg>
-    </div>
-    <div id="threeCanvas"></div>
+<!--    <div class="eye fade">-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 256 256" class="disableRender" id="eye">-->
+<!--            <path d="M247.31055,124.75061c-.35157-.79-8.81934-19.57617-27.65332-38.41113C194.57324,61.25256,162.87793,47.99182,128,47.99182S61.42676,61.25256,36.34277,86.33948c-18.834,18.835-27.30175,37.62109-27.65332,38.41113a8.00282,8.00282,0,0,0,0,6.49805c.35157.791,8.82032,19.57226,27.6543,38.40429C61.42773,194.734,93.12207,207.99182,128,207.99182S194.57227,194.734,219.65625,169.653c18.834-18.832,27.30273-37.61328,27.6543-38.40429A8.00282,8.00282,0,0,0,247.31055,124.75061ZM128,92.00061a36,36,0,1,1-36,36A36.04061,36.04061,0,0,1,128,92.00061Z"/>-->
+<!--        </svg>-->
+<!--        <svg xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 256 256" class="disableRender"-->
+<!--             id="eyeSlash">-->
+<!--            <path xmlns="http://www.w3.org/2000/svg"-->
+<!--                  d="M247.31055,131.25647c-.41992.94531-10.54688,23.37207-33.35938,43.80566a8.00126,8.00126,0,0,1-11.25781-.57715L101.40234,63.06506a8.00028,8.00028,0,0,1,4.60254-13.27246A133.97063,133.97063,0,0,1,128,47.99963c34.87793,0,66.57324,13.26075,91.65723,38.34766,18.834,18.83594,27.30175,37.62109,27.65332,38.41113A8.00282,8.00282,0,0,1,247.31055,131.25647ZM213.91992,210.6178a8.0006,8.0006,0,0,1-11.83984,10.76367l-22.01441-24.21582A126.97091,126.97091,0,0,1,128,207.99963c-34.87793,0-66.57227-13.25781-91.65625-38.33886-18.834-18.832-27.30273-37.61329-27.6543-38.4043a8.00282,8.00282,0,0,1,0-6.49805c.69556-1.564,16.31079-35.9209,52.63184-58.21191l-19.24121-21.165A8.0006,8.0006,0,1,1,53.91992,34.6178ZM145.6814,159.34289l-47.20459-51.9248a35.98114,35.98114,0,0,0,47.20459,51.9248Z"/>-->
+<!--        </svg>-->
+<!--    </div>-->
+<!--    <div id="threeCanvas"></div>-->
 </div>
 
 <script type="module" src="scripts/render.js"></script>

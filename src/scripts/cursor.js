@@ -1,4 +1,5 @@
 const cursor = document.getElementById('cursor');
+cursor.classList.add("hidden")
 
 $(document).on('mousemove', function (e) {
     cursor.classList.remove('hidden');
