@@ -30,11 +30,11 @@ a {
 
 a:hover {
     /* color: var(--white); */
-    background: rgba(200, 200, 200, 0.2) none repeat scroll 0% 0%;
+    background: rgba(200, 200, 200, 0.2) none repeat scroll 0;
 }
 
 a:focus {
-    background: rgba(200, 200, 200, 0.2) none repeat scroll 0% 0%;
+    background: rgba(200, 200, 200, 0.2) none repeat scroll 0;
     text-decoration: underline;
     outline: none;
     /* stupid */
@@ -553,7 +553,7 @@ body {
 }
 
 @keyframes grain {
-    0%, 100% {
+    0% {
         transform: translate(0, 0)
     }
 

@@ -106,7 +106,7 @@ body {
     width: 300%;
     left: -50%;
     top: -125%;
-    opacity: 0.12;
+    opacity: 0;
     position: fixed;
     z-index: 1000;
 
@@ -149,14 +149,18 @@ body {
 
 .contactHeader {
     font-size: 185px;
-    margin-top: 10%;
+    margin-top: 20%;
     margin-right: 600px;
 
     font-family: "DM Serif Display", var(--font);
 }
 
+.contactHeader strong {
+    color: var(--pinkish);
+}
+
 .contactHeader::after {
-    content: "contact";
+    content: "contact.";
     display: flex;
 
     font-family: "DM Serif Display", var(--font);
@@ -167,6 +171,8 @@ body {
     background: rgba(200, 200, 200, 0.15);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
+    /*filter: blur(5px);*/
 
 }
 
