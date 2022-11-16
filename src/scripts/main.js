@@ -17,7 +17,7 @@ function blockUI() {
         </div>
         <style>
             body {
-                background-color: var(--black);
+                /*background-color: var(--black);*/
             }
             
             #blockUI {
@@ -34,12 +34,12 @@ function blockUI() {
             
             .logoLeft {
                 transform: translate(-10%, -300%);
-                animation: logoSlideIn 1.6s cubic-bezier(0.77, -0.1, 0.96, -0.05) forwards;
+                animation: logoSlideIn 1s cubic-bezier(0.77, -0.1, 0.96, -0.05) forwards;
             }
             
             .logoRight {
                 transform: translate(10%, 300%);
-                animation: logoSlideIn 1.6s cubic-bezier(0.77, -0.1, 0.96, -0.05) forwards;
+                animation: logoSlideIn 1s cubic-bezier(0.77, -0.1, 0.96, -0.05) forwards;
             }
             
             @keyframes logoSlideIn {
@@ -75,7 +75,7 @@ function unblockUI() {
     // remove the block from the DOM
     // then update the body css to change the background colour
     $('#blockUI').remove();
-    $('.body').css('background-color', 'transparent');
+    // $('.body').css('background-color', 'transparent');
     appMount.classList.remove('hidden');
     $('#cursor').css('display', 'block')
 }

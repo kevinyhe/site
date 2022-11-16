@@ -67,6 +67,17 @@ body {
     transition-duration: 1s;
 }
 
+#gradient-canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    --gradient-color-1: #ef008f;
+    --gradient-color-2: #ff903e;
+    --gradient-color-3: #7038ff;
+    --gradient-color-4: #27beff;
+    z-index: 0;
+}
+
 #noiseBg {
     animation: grain 4s steps(10) infinite;
     background: url("/img/noise.png");
@@ -74,7 +85,7 @@ body {
     width: 300%;
     left: -50%;
     top: -125%;
-    opacity: 0.12;
+    opacity: 0;
     position: fixed;
     z-index: 1000;
 
@@ -118,7 +129,7 @@ body {
 
     z-index: 999;
 
-    animation: curtain 1s cubic-bezier(0.83, 0.15, 0.82, 0.19) forwards;
+    animation: curtain 3s cubic-bezier(0.83, 0.15, 0.82, 0.19) forwards;
 }
 
 .content {
@@ -356,13 +367,24 @@ body {
 
 @keyframes curtain {
     from {
-        width: 100%;
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+
+    60% {
+        transform: translateX(0%);
+
+    }
+    70% {
+        transform: translateX(0%);
+
     }
 
     to {
-        width: 0;
+        transform: translateX(100%);
     }
-
 }
 
 @media screen and (max-width: 1200px) {
