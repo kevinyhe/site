@@ -308,8 +308,8 @@ body {
 
     position: absolute;
 
-    bottom: 1.5%;
-    left: 1.5%;
+    bottom: 10px;
+    left: 10px;
     z-index: 2;
 
     animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
@@ -408,6 +408,28 @@ body {
     display: none !important;
 }
 
+@keyframes slide-in-right {
+    from {
+        filter: blur(20px);
+        transform: translateX(100%) scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        filter: blur(20px);
+        transform: translateX(-100%) scale(0.85);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
 @keyframes fade-in-top {
     from {
         transform: translateY(-30px) scale(0.85);
@@ -423,7 +445,7 @@ body {
 
 @keyframes fade-in-left {
     from {
-        transform: translateX(-80px) scale(0.85);
+        transform: translateX(-30px) scale(0.85);
         filter: blur(20px);
     }
 
@@ -449,7 +471,7 @@ body {
 
 @keyframes fade-in-right {
     from {
-        transform: translateX(80px) scale(0.85);
+        transform: translateX(30px) scale(0.85);
         filter: blur(20px);
     }
 
@@ -460,17 +482,38 @@ body {
     }
 }
 
-@keyframes curtain {
+@keyframes expand {
     from {
-        transform: translateX(0%);
-    }
-
-    50% {
-        transform: translateX(-100%);
+        transform: rotate(50deg);
+        height: 0;
     }
 
     to {
+        transform: rotate(-50deg);
+
+        height: 500px;
+    }
+}
+
+@keyframes curtain {
+    from {
+        transform: translateX(100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+
+    60% {
         transform: translateX(0%);
+
+    }
+    70% {
+        transform: translateX(0%);
+
+    }
+
+    to {
+        transform: translateX(100%);
     }
 }
 

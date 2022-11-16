@@ -165,11 +165,11 @@ body {
     user-select:none;
 
     font-size: 156px;
-    font-weight: 600;
+    /*font-weight: 600;*/
 
     /*font-family: 'DM Sans', var(--font);*/
     /*letter-spacing: -5px;*/
-    font-family: 'Poppins', var(--font);
+    font-family: 'DM Serif Display', var(--font);
     animation: slide-in-left cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
 
     line-height: 0.8;
@@ -191,7 +191,6 @@ body {
     user-select: none;
 
     width: 27rem;
-    /*width: 27rem;*/
     margin-top: 8px;
     font-size: 14px;
     overflow-wrap: normal;
@@ -237,7 +236,7 @@ body {
 }
 
 .line {
-    border-right: 2px var(--white) solid;
+    border-right: 3px var(--white) solid;
     height: 0;
     transform: rotate(-50deg);
 
@@ -452,13 +451,14 @@ body {
 
 @keyframes expand {
     from {
+        opacity: 0;
         transform: rotate(50deg);
         height: 0;
     }
 
     to {
         transform: rotate(-50deg);
-
+        opacity: 1;
         height: 500px;
     }
 }
@@ -521,9 +521,16 @@ body {
         justify-content: center;
     }
 
+    .line {
+        height: 0;
+        transform: rotate(90deg) !important;
+        margin-top: -200px;
+        margin-bottom: -230px;
+    }
+
     .titleDescription {
         margin-top: 0;
-        width: 240px;
+        width: 220px;
         text-align: center !important;
 
     }
