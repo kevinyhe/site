@@ -30,6 +30,7 @@ export default defineConfig({
 			input: {
 				main: resolve(root, "index.html"),
 				contact: resolve(root, "contact/index.html"),
+				projects: resolve(root, "about/index.html"),
 			},
 		},
 	},

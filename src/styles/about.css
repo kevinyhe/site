@@ -15,6 +15,25 @@
     Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.4rem;
+}
+
+body::-webkit-scrollbar-thumb {
+    height: 50px;
+    background-color: var(--pinkish);
+    border-radius: 3px;
+}
+
+body::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+body::-webkit-scrollbar-track-piece {
+    background-color: transparent;
+}
+
 * {
     cursor: none !important;
 }
@@ -30,11 +49,11 @@ a {
 
 a:hover {
     /* color: var(--white); */
-    background: rgba(200, 200, 200, 0.2) none repeat scroll 0;
+    background: rgba(200, 200, 200, 0.2) none repeat scroll 0% 0%;
 }
 
 a:focus {
-    background: rgba(200, 200, 200, 0.2) none repeat scroll 0;
+    background: rgba(200, 200, 200, 0.2) none repeat scroll 0% 0%;
     text-decoration: underline;
     outline: none;
     /* stupid */
@@ -46,7 +65,7 @@ body {
     margin: 0;
     font-family: var(--font),
     sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 
     color: var(--white);
 
@@ -57,6 +76,7 @@ body {
     opacity: 0;
 }
 
+
 #appMount {
     height: 100vh;
 
@@ -65,16 +85,17 @@ body {
     justify-content: center;
 
     transition-duration: 1s;
+
 }
 
 #gradient-canvas {
-    position: absolute;
+    position: fixed;
     width: 100%;
     height: 100%;
-    --gradient-color-1: #ef008f;
-    --gradient-color-2: #fb9209;
-    --gradient-color-3: #c989ff;
-    --gradient-color-4: #547cff;
+    --gradient-color-1: #a960ee;
+    --gradient-color-2: #ff333d;
+    --gradient-color-3: #90e0ff;
+    --gradient-color-4: #ffcb57;
     z-index: 0;
 }
 
@@ -90,16 +111,6 @@ body {
     z-index: 1000;
 
     pointer-events: none
-}
-
-#threeCanvas {
-    display: block;
-    position: absolute;
-    margin-left: 85vh;
-    margin-bottom: 9.5rem;
-    z-index: 0;
-
-    /*min-wid=: 150vw;*/
 }
 
 #cursor {
@@ -119,52 +130,20 @@ body {
     z-index: 9999;
 }
 
-#curtain {
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-    background-color: var(--black);
-
-    right: 0;
-
-    z-index: 999;
-
-    animation: curtain 3s cubic-bezier(0.83, 0.15, 0.82, 0.19) forwards;
-}
-
 .content {
-    height: 100vh;
-    /*height: 100%;*/
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 1;
-
-    /*transform: translateX(200px);*/
-
-    /*margin-top: 200px;*/
-    /*margin-right: 30vw;*/
-}
-
-.desc {
+    user-select: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    justify-content: flex-end;
-    /*transform: translate(-25vw, -60px);*/
-    /*margin-right: 250px;*/
+    align-items: center;
+
+    /* position: relative; */
+    z-index: 1;
 }
 
 .title {
-    /*transform: translate(10vw);*/
-}
-
-.titleName, .bigTitleName {
     user-select:none;
 
-    font-size: 156px;
+    font-size: 135px;
     /*font-weight: 600;*/
 
     /*font-family: 'DM Sans', var(--font);*/
@@ -175,105 +154,31 @@ body {
     line-height: 0.8;
 }
 
-
-.bigTitleName {
-    animation-duration: 1.3s;
-    animation-delay: 0.3s;
-    font-size: 164px;
-}
-
-.titleName strong {
+.title strong {
     color: var(--pinkish);
 }
 
-.titleDescription, .titleAbout {
-    text-align: right;
-    user-select: none;
-
-    width: 400px;
-    margin-top: 8px;
-    font-size: 14px;
-    overflow-wrap: normal;
-
-    animation: slide-in-right cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
-    /*animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;*/
-    animation-delay: 0.05s;
+.skillLogo {
+    width: 50px;
+    height: 100%;
 }
 
-.titleSocials {
-    text-align: right;
-    user-select: none;
+.description {
+    /*font-family: 'DM Serif Display', var(--font);*/
+    margin-top: 12px;
+    animation: slide-in-right cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.7s forwards;
 
-    margin-top: 10px;
-    font-size: 12px;
-
-    animation: slide-in-right cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
-    /*animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.8s forwards;*/
-    animation-delay: 0.2s;
+    line-height: 1.5;
+    font-size: 18px;
 }
 
-.titleAbout {
-    overflow-wrap: normal;
-    margin-top: -15px;
-    width: 480px;
-    font-weight: 650;
-    animation-delay: 0.1s;
-}
-
-.titleBio {
-    /* margin-top: 10px; */
-    color: var(--white);
-    font-size: 14px;
-    /* text-wrap: normal; */
-    width: 352px;
-}
-
-.disableRender {
-    align-self: flex-end;
-    width: 40px;
-
-    margin-bottom: 20px;
-}
-
-.line {
-    border-right: 3px var(--white) solid;
-    height: 0;
-    transform: rotate(-50deg);
-
-    animation: expand 1s cubic-bezier(0.23, 0.66, 0.19, 0.99) forwards;
-    animation-delay: 0.6s;
-}
-
-.eye {
-    display: flex;
-    flex-direction: column;
-
-    position: fixed;
-    bottom: 15px;
-    right: 15px;
-
-    z-index: 2;
-
-    animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
-    animation-delay: 1s;
-
-    background-color: var(--blackish);
-    border-radius: 50%;
-    padding: 10px;
-}
-
-#eye, #eyeSlash {
-    margin: 0;
-    /* there's random margin here idk why */
-    width: 30px;
-}
 
 .footer {
     display: flex;
     user-select: none;
     flex-direction: column;
 
-    position: absolute;
+    position: fixed;
 
     bottom: 10px;
     left: 10px;
@@ -451,14 +356,13 @@ body {
 
 @keyframes expand {
     from {
-        opacity: 0;
         transform: rotate(50deg);
         height: 0;
     }
 
     to {
         transform: rotate(-50deg);
-        opacity: 1;
+
         height: 500px;
     }
 }
@@ -485,75 +389,26 @@ body {
     }
 }
 
-@media screen and (max-width: 1200px) {
-    #threeCanvas {
-        margin-left: 0;
+@keyframes infiniteScroll {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
     }
 }
 
-@media screen and (max-width: 900px) {
-    .content {
-        position: absolute;
-        /*bottom: 10%;*/
-        /*left: 10%;*/
-        /*margin-right: 0;*/
-        flex-direction: column;
+@keyframes infiniteScrollGhost {
+    from {
+        transform: translateY(-100%);
     }
-
-    .title {
-        /*visibility: hidden;*/
-        /*left: 10%;*/
-        /*top: 10%;*/
-        /*position: fixed !important;*/
-        margin: 0;
-    }
-
-    .titleName, .bigTitleName {
-        text-align: center !important;
-        white-space: pre-wrap;
-        font-size: 20vw;
-        line-height: 0.8;
-    }
-
-    .desc {
-        margin-top: 30px;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .line {
-        height: 0;
-        transform: rotate(90deg) !important;
-        margin-top: -200px;
-        margin-bottom: -230px;
-    }
-
-    .titleDescription {
-        margin-top: 0;
-        width: 220px;
-        text-align: center !important;
-
-    }
-
-    .titleDescription strong {
-        /*margin-top: 10px;*/
-        width: 250px;
-        line-height: 1.6;
-    }
-
-    .titleBio, .titleSocials, .titleAbout {
-        overflow-wrap: normal;
-        width: 250px;
-        text-align: center !important;
-    }
-
-    .titleSocials {
-        width: 272px;
+    to {
+        transform: translateY(0);
     }
 }
 
 @keyframes grain {
-    0% {
+    0%, 100% {
         transform: translate(0, 0)
     }
 
@@ -591,5 +446,35 @@ body {
 
     90% {
         transform: translate(-10%, 10%)
+    }
+}
+
+@keyframes bounce-y1 {
+    from {
+        transform: translate(0%, 0%);
+    }
+
+    to {
+        transform: translate(0%, -10%);
+    }
+}
+
+@keyframes bounce-y2 {
+    from {
+        transform: translate(0%, 0%);
+    }
+
+    to {
+        transform: translate(0%, 10%);
+    }
+}
+
+@keyframes wobble {
+    from {
+        transform: rotate(-6deg);
+    }
+
+    to {
+        transform: rotate(6deg);
     }
 }
