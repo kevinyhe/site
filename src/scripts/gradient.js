@@ -547,5 +547,4 @@ class Gradient {
 */
 
 const gradient = new Gradient();
-gradient.initGradient("#gradient-canvas");
-gradient.waitForCssVars();
+$(document).ready(() => gradient.initGradient("#gradient-canvas"));
