@@ -12,7 +12,7 @@
     --pinkish: #fd95d0;
     --dark-grey: rgba(18, 18, 18, 0.7);
     --font: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -64,7 +64,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: var(--font),
-    sans-serif;
+        sans-serif;
     overflow-x: hidden;
 
     color: var(--white);
@@ -114,7 +114,7 @@ body {
 }
 
 #cursor {
-    transition-duration: 1.4s;
+    transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
     mix-blend-mode: difference;
@@ -131,7 +131,6 @@ body {
 }
 
 .content {
-    user-select: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -141,7 +140,7 @@ body {
 }
 
 .title {
-    user-select:none;
+    user-select: none;
 
     font-size: 135px;
     /*font-weight: 600;*/
@@ -149,7 +148,7 @@ body {
     /*font-family: 'DM Sans', var(--font);*/
     /*letter-spacing: -5px;*/
     font-family: 'DM Serif Display', var(--font);
-    animation: slide-in-left cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
 
     line-height: 0.8;
 }
@@ -158,18 +157,65 @@ body {
     color: var(--pinkish);
 }
 
+.skillContainer {
+    margin-top: 50px;
+}
+
 .skillLogo {
     width: 50px;
     height: 100%;
 }
 
-.description {
-    /*font-family: 'DM Serif Display', var(--font);*/
+#html {
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.2s forwards;
+}
+#css {
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.4s forwards;
+}
+#js {
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.6s forwards;
+}
+#ts {
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.8s forwards;
+}
+#cpp {
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2s forwards;
+}
+#mongo {
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2.2s forwards;
+}
+#java {
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2.4s forwards;
+}
+#blender {
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2.6s forwards;
+}
+#figma {
+    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2.8s forwards;
+}
+
+.about {
+    width: 500px;
+}
+
+.quote {
+    font-family: 'IBM Plex Serif', var(--font);
+    margin-top: 36px;
+    animation: slide-in-left cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.7s forwards;
+    text-align: justify;
+
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+.quoteAuthor {
+    font-family: 'IBM Plex Serif', var(--font);
     margin-top: 12px;
     animation: slide-in-right cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.7s forwards;
 
     line-height: 1.5;
-    font-size: 18px;
+    font-size: 16px;
+    text-align: right;
 }
 
 
@@ -285,6 +331,7 @@ body {
         filter: blur(20px);
         transform: translateX(100%) scale(0.85);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -296,6 +343,7 @@ body {
         filter: blur(20px);
         transform: translateX(-100%) scale(0.85);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -371,6 +419,7 @@ body {
     from {
         transform: translateX(100%);
     }
+
     50% {
         transform: translateX(100%);
     }
@@ -379,6 +428,7 @@ body {
         transform: translateX(0%);
 
     }
+
     70% {
         transform: translateX(0%);
 
@@ -393,6 +443,7 @@ body {
     from {
         transform: translateY(0);
     }
+
     to {
         transform: translateY(100%);
     }
@@ -402,6 +453,7 @@ body {
     from {
         transform: translateY(-100%);
     }
+
     to {
         transform: translateY(0);
     }

@@ -12,7 +12,7 @@
     --pinkish: #fd95d0;
     --dark-grey: rgba(18, 18, 18, 0.7);
     --font: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+        Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
 * {
@@ -45,7 +45,7 @@ body {
     padding: 0;
     margin: 0;
     font-family: var(--font),
-    sans-serif;
+        sans-serif;
     overflow: hidden;
 
     color: var(--white);
@@ -103,7 +103,7 @@ body {
 }
 
 #cursor {
-    transition-duration: 1.4s;
+    transition-duration: 1s;
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
     mix-blend-mode: difference;
@@ -162,7 +162,7 @@ body {
 }
 
 .titleName, .bigTitleName {
-    user-select:none;
+    user-select: none;
 
     font-size: 156px;
     /*font-weight: 600;*/
@@ -380,6 +380,7 @@ body {
         filter: blur(20px);
         transform: translateX(100%) scale(0.85);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -391,6 +392,7 @@ body {
         filter: blur(20px);
         transform: translateX(-100%) scale(0.85);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -467,6 +469,7 @@ body {
     from {
         transform: translateX(100%);
     }
+
     50% {
         transform: translateX(100%);
     }
@@ -475,6 +478,7 @@ body {
         transform: translateX(0%);
 
     }
+
     70% {
         transform: translateX(0%);
 
