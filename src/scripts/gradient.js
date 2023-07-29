@@ -1,11 +1,3 @@
-/*
-*   Stripe WebGl Gradient Animation
-*   All Credits to Stripe.com
-*   ScrollObserver functionality to disable animation when not scrolled into view has been disabled and 
-*   commented out for now.
-*   https://kevinhufnagl.com
-*/
-
 //Converting colors to proper format
 function normalizeColor(hexCode) {
     return [(hexCode >> 16 & 255) / 255, (hexCode >> 8 & 255) / 255, (255 & hexCode) / 255]
@@ -15,9 +7,6 @@ function normalizeColor(hexCode) {
     [t]: n
 }), {});
 
-//Essential functionality of WebGl
-//t = width
-//n = height
 class MiniGl {
     constructor(canvas, width, height, debug = false) {
         const _miniGl = this,
@@ -501,10 +490,6 @@ class Gradient {
         this.initGradientColors(), this.initMesh(), this.resize(), requestAnimationFrame(this.animate), window.addEventListener("resize", this.resize)
     }
 
-    /*
-    * Waiting for the css variables to become available, usually on page load before we can continue.
-    * Using default colors assigned below if no variables have been found after maxCssVarRetries
-    */
     waitForCssVars() {
         if (this.computedCanvasStyle && -1 !== this.computedCanvasStyle.getPropertyValue("--gradient-color-1").indexOf("#")) this.init(), this.addIsLoadedClass();
         else {
@@ -515,9 +500,6 @@ class Gradient {
         }
     }
 
-    /*
-    * Initializes the four section colors by retrieving them from css variables.
-    */
     initGradientColors() {
         this.sectionColors = ["--gradient-color-1", "--gradient-color-2", "--gradient-color-3", "--gradient-color-4"].map(cssPropertyName => {
             let hex = this.computedCanvasStyle.getPropertyValue(cssPropertyName).trim();
@@ -530,21 +512,6 @@ class Gradient {
         }).filter(Boolean).map(normalizeColor)
     }
 }
-
-
-/*
-*Finally initializing the Gradient class, assigning a canvas to it and calling Gradient.connect() which initializes everything,
-* Use Gradient.pause() and Gradient.play() for controls.
-*
-* Here are some default property values you can change anytime:
-* Amplitude:    Gradient.amp = 0
-* Colors:       Gradient.sectionColors (if you change colors, use normalizeColor(#hexValue)) before you assign it.
-*
-*
-* Useful functions
-* Gradient.toggleColor(index)
-* Gradient.updateFrequency(freq)
-*/
 
 const gradient = new Gradient();
 $(document).ready(() => gradient.initGradient("#gradient-canvas"));

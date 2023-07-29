@@ -1,287 +1,617 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <title>Contact / Kevin He</title>
-    <link rel="icon" href="/img/favicon.png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta property="og:title" content="Contact / Kevin He">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://thebao.studio/contact">
-    <meta property="og:description" content="Some places where I exist on the internet.">
+	<head>
+		<meta charset="utf-8" />
+		<title>Contact / Kevin He</title>
+		<link rel="icon" href="/img/favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <meta property="og:image"
-    content="https://raw.githubusercontent.com/thekevinlab/thebao.studio/main/src/public/img/meta.png">
-    <meta content="summary_large_image" name="twitter:card">
-    <meta content="#fd95d0" name="theme-color">
-    <!-- Place favicon.ico in the root directory -->
+		<meta property="og:title" content="Contact / Kevin He" />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://thebao.studio/contact" />
+		<meta
+			property="og:description"
+			content="Some places where I exist on the internet."
+		/>
 
-    <link rel="stylesheet" href="../styles/contact.css">
-    <link rel="stylesheet" href="../styles/normalize.css">
+		<meta
+			property="og:image"
+			content="https://raw.githubusercontent.com/thekevinlab/thebao.studio/main/src/public/img/meta.png"
+		/>
+		<meta content="summary_large_image" name="twitter:card" />
+		<meta content="#fd95d0" name="theme-color" />
+		<!-- Place favicon.ico in the root directory -->
 
-    <script src="https://code.jquery.com/jquery-3.6.1.js"
-            integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-    <script src="//instant.page/5.1.1" type="module" integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"></script>
-</head>
+		<link rel="stylesheet" href="../styles/contact.css" />
+		<link rel="stylesheet" href="../styles/normalize.css" />
 
-<body>
-<noscript>
-    <strong>We're sorry but website doesn't work properly without JavaScript enabled. Please enable it to
-        continue.</strong>
-</noscript>
-<canvas id="gradient-canvas" data-js-darken-top data-transition-in></canvas>
-<div id="cursor" class="hidden"></div>
-<!-- <div id="roseGold"></div> -->
-<div id="noiseBg" style="background-position: 3% 81%;"></div>
-<div id="appMount">
-    <div class="navContainer fade">
-        <a style="background: none !important;" href="/">
-            <svg class="navLogo fade" viewBox="0 0 915 742" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-                <path d="M0 254.224L235.183 741.057L409.125 654.601L585.127 160.048L493.524 0L313.92 302.598L0 254.224Z"
-                    fill="var(--pinkish)"/>
-                <path d="M687.022 336.049L610.858 212.539L458.529 635.56L833.175 445.149L915 251.651L687.022 336.049Z"
-                    fill="var(--pinkish)"/>
-            </svg>
-        </a>
-        <div class="navLinks">
-            <a class="navLink" tabindex="1" href="/">home</a>
-            <!-- <a class="navLink" tabindex="1" href="/">the works</a> -->
-            <a class="navLink" tabindex="1" href="/about">about</a>
-            <a class="navLink" tabindex="1" href="/contact">contact</a>
-        </div>
-    </div>
-    <a style="background: none !important;" href="/">
-        <svg class="bigLogo fade" viewBox="0 0 915 742" xmlns="http://www.w3.org/2000/svg" overflow="visible">
-            <path d="M0 254.224L235.183 741.057L409.125 654.601L585.127 160.048L493.524 0L313.92 302.598L0 254.224Z"
-                  fill="var(--white)"/>
-            <path d="M687.022 336.049L610.858 212.539L458.529 635.56L833.175 445.149L915 251.651L687.022 336.049Z"
-                  fill="var(--white)"/>
-        </svg>
-    </a>
-    <div class="content">
-        <div class="contactHeader">contact<strong>.</strong></div>
-        <div class="socialsScroll">
-            <div class="socialsContainerMirror">
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent discord">
-                    <svg class="componentLogo" xmlns="http://www.w3.org/2000/svg" width="71" height="55" viewBox="0 0 71 55" fill="none">
-                        <g clip-path="url(#clip0)">
-                            <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill="#ffffff"/>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0">
-                                <rect width="71" height="55" fill="var(--white)"/>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Discord</div>
-                        <div class="componentDescription">@hyperrrrrrrrrrrrrrrrrr</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent twitter" href="https://twitter.com/thekevinlab">
-                    <svg class="componentLogo" viewBox="0 0 310 310" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="var(--white)" d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73   c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783   c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598   C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467   c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977   c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889   c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597   c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961   c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895   c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367   c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998   C307.394,57.037,305.009,56.486,302.973,57.388z"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Twitter</div>
-                        <div class="componentDescription">@thekevinlab</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent email" href="mailto:hey@thebao.studio">
-                    <svg fill="var(--white)" class="componentLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.001 330.001">
-                        <path d="M173.871,177.097c-2.641,1.936-5.756,2.903-8.87,2.903c-3.116,0-6.23-0.967-8.871-2.903L30,84.602   L0.001,62.603L0,275.001c0.001,8.284,6.716,15,15,15L315.001,290c8.285,0,15-6.716,15-14.999V62.602l-30.001,22L173.871,177.097z"/>
-                        <polygon points="165.001,146.4 310.087,40.001 19.911,40  "/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Email</div>
-                        <div class="componentDescription">hey@thebao.studio</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent ig" href="https://www.instagram.com/kevin.h_3/">
-                    <svg class="componentLogo" fill="var(--white)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551.034 551.034">
-                        <path d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"/>
-                        <path d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z"/>
-                        <circle cx="418.306" cy="134.072" r="34.149"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Instagram</div>
-                        <div class="componentDescription">@kevin.h_3</div>
-                    </div>
-                </a>
-                <a tabindex="1" rget="_blank" rel="noreferrer noopener" class="socialComponent github" href="https://www.github.com/baostudios">
-                    <svg class="componentLogo" fill="var(--white)" viewBox="0 0 530 530" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="260" cy="259" r="254" fill="none"/>
-                        <path d="M259 0C115.989 0 0 115.967 0 259C0 373.435 74.2035 470.517 177.134 504.769C190.063 507.165 194.25 499.136 194.25 492.316V444.099C122.205 459.768 107.204 413.537 107.204 413.537C95.4199 383.601 78.4338 375.636 78.4338 375.636C54.9296 359.557 80.2253 359.902 80.2253 359.902C106.233 361.715 119.917 386.601 119.917 386.601C143.011 426.185 180.501 414.745 195.286 408.119C197.595 391.392 204.308 379.953 211.733 373.5C154.213 366.917 93.7364 344.707 93.7364 245.489C93.7364 217.193 103.859 194.099 120.413 175.969C117.737 169.429 108.866 143.076 122.939 107.42C122.939 107.42 144.695 100.47 194.185 133.968C214.841 128.227 236.985 125.356 259 125.248C281.015 125.356 303.181 128.227 323.88 133.968C373.327 100.47 395.04 107.42 395.04 107.42C409.134 143.098 400.263 169.451 397.587 175.969C414.206 194.099 424.242 217.215 424.242 245.489C424.242 344.966 363.658 366.874 305.987 373.284C315.268 381.313 323.75 397.069 323.75 421.242V492.316C323.75 499.201 327.894 507.295 341.038 504.748C443.883 470.452 518 373.392 518 259C518 115.967 402.033 0 259 0Z"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">GitHub</div>
-                        <div class="componentDescription">baostudios</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent spotify" href="https://open.spotify.com/user/yz4dr6d4xy8k3kja76qgeuzv9">
-                    <svg class="componentLogo" fill="var(--white)" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 0c-8.803 0-16 7.197-16 16s7.197 16 16 16c8.803 0 16-7.197 16-16s-7.12-16-16-16zM23.36 23.12c-0.319 0.479-0.881 0.64-1.36 0.317-3.76-2.317-8.479-2.797-14.083-1.52-0.557 0.165-1.037-0.235-1.199-0.72-0.156-0.557 0.24-1.036 0.719-1.197 6.084-1.36 11.365-0.803 15.521 1.76 0.563 0.24 0.64 0.88 0.401 1.36zM25.281 18.719c-0.401 0.563-1.12 0.803-1.683 0.401-4.317-2.641-10.88-3.437-15.916-1.839-0.641 0.156-1.365-0.161-1.521-0.803-0.161-0.64 0.156-1.359 0.797-1.52 5.844-1.761 13.041-0.876 18 2.161 0.484 0.24 0.724 1.041 0.323 1.599zM25.443 14.24c-5.125-3.043-13.683-3.36-18.563-1.839-0.801 0.239-1.599-0.24-1.839-0.964-0.239-0.797 0.24-1.599 0.959-1.839 5.683-1.681 15.041-1.359 20.964 2.161 0.719 0.401 0.957 1.36 0.557 2.079-0.401 0.563-1.36 0.801-2.079 0.401z"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Spotify</div>
-                        <div class="componentDescription">Kevin</div>
-                    </div>
-                </a>
-            </div>
-            <div class="socialsContainerMirror2">
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent discord">
-                    <svg class="componentLogo" xmlns="http://www.w3.org/2000/svg" width="71" height="55" viewBox="0 0 71 55" fill="none">
-                        <g clip-path="url(#clip0)">
-                            <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill="#ffffff"/>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0">
-                                <rect width="71" height="55" fill="var(--white)"/>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Discord</div>
-                        <div class="componentDescription">@hyperrrrrrrrrrrrrrrrrr</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent twitter" href="https://twitter.com/thekevinlab">
-                    <svg class="componentLogo" viewBox="0 0 310 310" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="var(--white)" d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73   c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783   c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598   C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467   c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977   c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889   c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597   c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961   c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895   c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367   c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998   C307.394,57.037,305.009,56.486,302.973,57.388z"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Twitter</div>
-                        <div class="componentDescription">@thekevinlab</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent email" href="mailto:hey@thebao.studio">
-                    <svg fill="var(--white)" class="componentLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.001 330.001">
-                        <path d="M173.871,177.097c-2.641,1.936-5.756,2.903-8.87,2.903c-3.116,0-6.23-0.967-8.871-2.903L30,84.602   L0.001,62.603L0,275.001c0.001,8.284,6.716,15,15,15L315.001,290c8.285,0,15-6.716,15-14.999V62.602l-30.001,22L173.871,177.097z"/>
-                        <polygon points="165.001,146.4 310.087,40.001 19.911,40  "/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Email</div>
-                        <div class="componentDescription">hey@thebao.studio</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent ig" href="https://www.instagram.com/kevin.h_3/">
-                    <svg class="componentLogo" fill="var(--white)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551.034 551.034">
-                        <path d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"/>
-                        <path d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z"/>
-                        <circle cx="418.306" cy="134.072" r="34.149"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Instagram</div>
-                        <div class="componentDescription">@kevin.h_3</div>
-                    </div>
-                </a>
-                <a tabindex="1" rget="_blank" rel="noreferrer noopener" class="socialComponent github" href="https://www.github.com/baostudios">
-                    <svg class="componentLogo" fill="var(--white)" viewBox="0 0 530 530" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="260" cy="259" r="254" fill="none"/>
-                        <path d="M259 0C115.989 0 0 115.967 0 259C0 373.435 74.2035 470.517 177.134 504.769C190.063 507.165 194.25 499.136 194.25 492.316V444.099C122.205 459.768 107.204 413.537 107.204 413.537C95.4199 383.601 78.4338 375.636 78.4338 375.636C54.9296 359.557 80.2253 359.902 80.2253 359.902C106.233 361.715 119.917 386.601 119.917 386.601C143.011 426.185 180.501 414.745 195.286 408.119C197.595 391.392 204.308 379.953 211.733 373.5C154.213 366.917 93.7364 344.707 93.7364 245.489C93.7364 217.193 103.859 194.099 120.413 175.969C117.737 169.429 108.866 143.076 122.939 107.42C122.939 107.42 144.695 100.47 194.185 133.968C214.841 128.227 236.985 125.356 259 125.248C281.015 125.356 303.181 128.227 323.88 133.968C373.327 100.47 395.04 107.42 395.04 107.42C409.134 143.098 400.263 169.451 397.587 175.969C414.206 194.099 424.242 217.215 424.242 245.489C424.242 344.966 363.658 366.874 305.987 373.284C315.268 381.313 323.75 397.069 323.75 421.242V492.316C323.75 499.201 327.894 507.295 341.038 504.748C443.883 470.452 518 373.392 518 259C518 115.967 402.033 0 259 0Z"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">GitHub</div>
-                        <div class="componentDescription">baostudios</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent spotify" href="https://open.spotify.com/user/yz4dr6d4xy8k3kja76qgeuzv9">
-                    <svg class="componentLogo" fill="var(--white)" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 0c-8.803 0-16 7.197-16 16s7.197 16 16 16c8.803 0 16-7.197 16-16s-7.12-16-16-16zM23.36 23.12c-0.319 0.479-0.881 0.64-1.36 0.317-3.76-2.317-8.479-2.797-14.083-1.52-0.557 0.165-1.037-0.235-1.199-0.72-0.156-0.557 0.24-1.036 0.719-1.197 6.084-1.36 11.365-0.803 15.521 1.76 0.563 0.24 0.64 0.88 0.401 1.36zM25.281 18.719c-0.401 0.563-1.12 0.803-1.683 0.401-4.317-2.641-10.88-3.437-15.916-1.839-0.641 0.156-1.365-0.161-1.521-0.803-0.161-0.64 0.156-1.359 0.797-1.52 5.844-1.761 13.041-0.876 18 2.161 0.484 0.24 0.724 1.041 0.323 1.599zM25.443 14.24c-5.125-3.043-13.683-3.36-18.563-1.839-0.801 0.239-1.599-0.24-1.839-0.964-0.239-0.797 0.24-1.599 0.959-1.839 5.683-1.681 15.041-1.359 20.964 2.161 0.719 0.401 0.957 1.36 0.557 2.079-0.401 0.563-1.36 0.801-2.079 0.401z"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Spotify</div>
-                        <div class="componentDescription">Kevin</div>
-                    </div>
-                </a>
-            </div>
-            <div class="socialsContainer">
-            <!-- <svg class="socialsLogo" viewBox="0 0 915 742" xmlns="http://www.w3.org/2000/svg" overflow="visible">
+		<script
+			src="https://code.jquery.com/jquery-3.6.1.js"
+			integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="//instant.page/5.1.1"
+			type="module"
+			integrity="sha384-MWfCL6g1OTGsbSwfuMHc8+8J2u71/LA8dzlIN3ycajckxuZZmF+DNjdm7O6H3PSq"
+		></script>
+	</head>
+
+	<body>
+		<noscript>
+			<strong
+				>We're sorry but website doesn't work properly without
+				JavaScript enabled. Please enable it to continue.</strong
+			>
+		</noscript>
+		<canvas
+			id="gradient-canvas"
+			data-js-darken-top
+			data-transition-in
+		></canvas>
+		<div id="cursor" class="hidden"></div>
+		<!-- <div id="roseGold"></div> -->
+		<div id="noiseBg" style="background-position: 3% 81%"></div>
+		<div id="appMount">
+			<div class="navContainer fade">
+				<a style="background: none !important" href="/">
+					<svg
+						class="navLogo fade"
+						viewBox="0 0 915 742"
+						xmlns="http://www.w3.org/2000/svg"
+						overflow="visible"
+					>
+						<path
+							d="M0 254.224L235.183 741.057L409.125 654.601L585.127 160.048L493.524 0L313.92 302.598L0 254.224Z"
+							fill="var(--pinkish)"
+						/>
+						<path
+							d="M687.022 336.049L610.858 212.539L458.529 635.56L833.175 445.149L915 251.651L687.022 336.049Z"
+							fill="var(--pinkish)"
+						/>
+					</svg>
+				</a>
+				<div class="navLinks">
+					<a class="navLink" tabindex="1" href="/">home</a>
+					<!-- <a class="navLink" tabindex="1" href="/">the works</a> -->
+					<a class="navLink" tabindex="1" href="/about">about</a>
+					<a class="navLink" tabindex="1" href="/contact">contact</a>
+				</div>
+			</div>
+			<a style="background: none !important" href="/">
+				<svg
+					class="bigLogo fade"
+					viewBox="0 0 915 742"
+					xmlns="http://www.w3.org/2000/svg"
+					overflow="visible"
+				>
+					<path
+						d="M0 254.224L235.183 741.057L409.125 654.601L585.127 160.048L493.524 0L313.92 302.598L0 254.224Z"
+						fill="var(--white)"
+					/>
+					<path
+						d="M687.022 336.049L610.858 212.539L458.529 635.56L833.175 445.149L915 251.651L687.022 336.049Z"
+						fill="var(--white)"
+					/>
+				</svg>
+			</a>
+			<div class="content">
+				<div class="contactHeader">contact<strong>.</strong></div>
+				<div class="socialsScroll">
+					<div class="socialsContainerMirror">
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent discord"
+						>
+							<svg
+								class="componentLogo"
+								xmlns="http://www.w3.org/2000/svg"
+								width="71"
+								height="55"
+								viewBox="0 0 71 55"
+								fill="none"
+							>
+								<g clip-path="url(#clip0)">
+									<path
+										d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z"
+										fill="#ffffff"
+									/>
+								</g>
+								<defs>
+									<clipPath id="clip0">
+										<rect
+											width="71"
+											height="55"
+											fill="var(--white)"
+										/>
+									</clipPath>
+								</defs>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Discord</div>
+								<div class="componentDescription">
+									@hyperrrrrrrrrrrrrrrrrr
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent twitter"
+							href="https://twitter.com/thekevinlab"
+						>
+							<svg
+								class="componentLogo"
+								viewBox="0 0 310 310"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill="var(--white)"
+									d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73   c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783   c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598   C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467   c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977   c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889   c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597   c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961   c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895   c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367   c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998   C307.394,57.037,305.009,56.486,302.973,57.388z"
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Twitter</div>
+								<div class="componentDescription">
+									@thekevinlab
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent email"
+							href="mailto:hey@thebao.studio"
+						>
+							<svg
+								fill="var(--white)"
+								class="componentLogo"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 330.001 330.001"
+							>
+								<path
+									d="M173.871,177.097c-2.641,1.936-5.756,2.903-8.87,2.903c-3.116,0-6.23-0.967-8.871-2.903L30,84.602   L0.001,62.603L0,275.001c0.001,8.284,6.716,15,15,15L315.001,290c8.285,0,15-6.716,15-14.999V62.602l-30.001,22L173.871,177.097z"
+								/>
+								<polygon
+									points="165.001,146.4 310.087,40.001 19.911,40  "
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Email</div>
+								<div class="componentDescription">
+									hey@thebao.studio
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent ig"
+							href="https://www.instagram.com/kevin.h_3/"
+						>
+							<svg
+								class="componentLogo"
+								fill="var(--white)"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 551.034 551.034"
+							>
+								<path
+									d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"
+								/>
+								<path
+									d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z"
+								/>
+								<circle cx="418.306" cy="134.072" r="34.149" />
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Instagram</div>
+								<div class="componentDescription">
+									@kevin.h_3
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							rget="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent github"
+							href="https://www.github.com/baostudios"
+						>
+							<svg
+								class="componentLogo"
+								fill="var(--white)"
+								viewBox="0 0 530 530"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<circle cx="260" cy="259" r="254" fill="none" />
+								<path
+									d="M259 0C115.989 0 0 115.967 0 259C0 373.435 74.2035 470.517 177.134 504.769C190.063 507.165 194.25 499.136 194.25 492.316V444.099C122.205 459.768 107.204 413.537 107.204 413.537C95.4199 383.601 78.4338 375.636 78.4338 375.636C54.9296 359.557 80.2253 359.902 80.2253 359.902C106.233 361.715 119.917 386.601 119.917 386.601C143.011 426.185 180.501 414.745 195.286 408.119C197.595 391.392 204.308 379.953 211.733 373.5C154.213 366.917 93.7364 344.707 93.7364 245.489C93.7364 217.193 103.859 194.099 120.413 175.969C117.737 169.429 108.866 143.076 122.939 107.42C122.939 107.42 144.695 100.47 194.185 133.968C214.841 128.227 236.985 125.356 259 125.248C281.015 125.356 303.181 128.227 323.88 133.968C373.327 100.47 395.04 107.42 395.04 107.42C409.134 143.098 400.263 169.451 397.587 175.969C414.206 194.099 424.242 217.215 424.242 245.489C424.242 344.966 363.658 366.874 305.987 373.284C315.268 381.313 323.75 397.069 323.75 421.242V492.316C323.75 499.201 327.894 507.295 341.038 504.748C443.883 470.452 518 373.392 518 259C518 115.967 402.033 0 259 0Z"
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">GitHub</div>
+								<div class="componentDescription">
+									baostudios
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent spotify"
+							href="https://open.spotify.com/user/yz4dr6d4xy8k3kja76qgeuzv9"
+						>
+							<svg
+								class="componentLogo"
+								fill="var(--white)"
+								viewBox="0 0 32 32"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M16 0c-8.803 0-16 7.197-16 16s7.197 16 16 16c8.803 0 16-7.197 16-16s-7.12-16-16-16zM23.36 23.12c-0.319 0.479-0.881 0.64-1.36 0.317-3.76-2.317-8.479-2.797-14.083-1.52-0.557 0.165-1.037-0.235-1.199-0.72-0.156-0.557 0.24-1.036 0.719-1.197 6.084-1.36 11.365-0.803 15.521 1.76 0.563 0.24 0.64 0.88 0.401 1.36zM25.281 18.719c-0.401 0.563-1.12 0.803-1.683 0.401-4.317-2.641-10.88-3.437-15.916-1.839-0.641 0.156-1.365-0.161-1.521-0.803-0.161-0.64 0.156-1.359 0.797-1.52 5.844-1.761 13.041-0.876 18 2.161 0.484 0.24 0.724 1.041 0.323 1.599zM25.443 14.24c-5.125-3.043-13.683-3.36-18.563-1.839-0.801 0.239-1.599-0.24-1.839-0.964-0.239-0.797 0.24-1.599 0.959-1.839 5.683-1.681 15.041-1.359 20.964 2.161 0.719 0.401 0.957 1.36 0.557 2.079-0.401 0.563-1.36 0.801-2.079 0.401z"
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Spotify</div>
+								<div class="componentDescription">Kevin</div>
+							</div>
+						</a>
+					</div>
+					<div class="socialsContainerMirror2">
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent discord"
+						>
+							<svg
+								class="componentLogo"
+								xmlns="http://www.w3.org/2000/svg"
+								width="71"
+								height="55"
+								viewBox="0 0 71 55"
+								fill="none"
+							>
+								<g clip-path="url(#clip0)">
+									<path
+										d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z"
+										fill="#ffffff"
+									/>
+								</g>
+								<defs>
+									<clipPath id="clip0">
+										<rect
+											width="71"
+											height="55"
+											fill="var(--white)"
+										/>
+									</clipPath>
+								</defs>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Discord</div>
+								<div class="componentDescription">
+									@hyperrrrrrrrrrrrrrrrrr
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent twitter"
+							href="https://twitter.com/thekevinlab"
+						>
+							<svg
+								class="componentLogo"
+								viewBox="0 0 310 310"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill="var(--white)"
+									d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73   c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783   c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598   C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467   c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977   c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889   c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597   c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961   c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895   c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367   c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998   C307.394,57.037,305.009,56.486,302.973,57.388z"
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Twitter</div>
+								<div class="componentDescription">
+									@thekevinlab
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent email"
+							href="mailto:hey@thebao.studio"
+						>
+							<svg
+								fill="var(--white)"
+								class="componentLogo"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 330.001 330.001"
+							>
+								<path
+									d="M173.871,177.097c-2.641,1.936-5.756,2.903-8.87,2.903c-3.116,0-6.23-0.967-8.871-2.903L30,84.602   L0.001,62.603L0,275.001c0.001,8.284,6.716,15,15,15L315.001,290c8.285,0,15-6.716,15-14.999V62.602l-30.001,22L173.871,177.097z"
+								/>
+								<polygon
+									points="165.001,146.4 310.087,40.001 19.911,40  "
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Email</div>
+								<div class="componentDescription">
+									hey@thebao.studio
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent ig"
+							href="https://www.instagram.com/kevin.h_3/"
+						>
+							<svg
+								class="componentLogo"
+								fill="var(--white)"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 551.034 551.034"
+							>
+								<path
+									d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"
+								/>
+								<path
+									d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z"
+								/>
+								<circle cx="418.306" cy="134.072" r="34.149" />
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Instagram</div>
+								<div class="componentDescription">
+									@kevin.h_3
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							rget="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent github"
+							href="https://www.github.com/baostudios"
+						>
+							<svg
+								class="componentLogo"
+								fill="var(--white)"
+								viewBox="0 0 530 530"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<circle cx="260" cy="259" r="254" fill="none" />
+								<path
+									d="M259 0C115.989 0 0 115.967 0 259C0 373.435 74.2035 470.517 177.134 504.769C190.063 507.165 194.25 499.136 194.25 492.316V444.099C122.205 459.768 107.204 413.537 107.204 413.537C95.4199 383.601 78.4338 375.636 78.4338 375.636C54.9296 359.557 80.2253 359.902 80.2253 359.902C106.233 361.715 119.917 386.601 119.917 386.601C143.011 426.185 180.501 414.745 195.286 408.119C197.595 391.392 204.308 379.953 211.733 373.5C154.213 366.917 93.7364 344.707 93.7364 245.489C93.7364 217.193 103.859 194.099 120.413 175.969C117.737 169.429 108.866 143.076 122.939 107.42C122.939 107.42 144.695 100.47 194.185 133.968C214.841 128.227 236.985 125.356 259 125.248C281.015 125.356 303.181 128.227 323.88 133.968C373.327 100.47 395.04 107.42 395.04 107.42C409.134 143.098 400.263 169.451 397.587 175.969C414.206 194.099 424.242 217.215 424.242 245.489C424.242 344.966 363.658 366.874 305.987 373.284C315.268 381.313 323.75 397.069 323.75 421.242V492.316C323.75 499.201 327.894 507.295 341.038 504.748C443.883 470.452 518 373.392 518 259C518 115.967 402.033 0 259 0Z"
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">GitHub</div>
+								<div class="componentDescription">
+									baostudios
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent spotify"
+							href="https://open.spotify.com/user/yz4dr6d4xy8k3kja76qgeuzv9"
+						>
+							<svg
+								class="componentLogo"
+								fill="var(--white)"
+								viewBox="0 0 32 32"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M16 0c-8.803 0-16 7.197-16 16s7.197 16 16 16c8.803 0 16-7.197 16-16s-7.12-16-16-16zM23.36 23.12c-0.319 0.479-0.881 0.64-1.36 0.317-3.76-2.317-8.479-2.797-14.083-1.52-0.557 0.165-1.037-0.235-1.199-0.72-0.156-0.557 0.24-1.036 0.719-1.197 6.084-1.36 11.365-0.803 15.521 1.76 0.563 0.24 0.64 0.88 0.401 1.36zM25.281 18.719c-0.401 0.563-1.12 0.803-1.683 0.401-4.317-2.641-10.88-3.437-15.916-1.839-0.641 0.156-1.365-0.161-1.521-0.803-0.161-0.64 0.156-1.359 0.797-1.52 5.844-1.761 13.041-0.876 18 2.161 0.484 0.24 0.724 1.041 0.323 1.599zM25.443 14.24c-5.125-3.043-13.683-3.36-18.563-1.839-0.801 0.239-1.599-0.24-1.839-0.964-0.239-0.797 0.24-1.599 0.959-1.839 5.683-1.681 15.041-1.359 20.964 2.161 0.719 0.401 0.957 1.36 0.557 2.079-0.401 0.563-1.36 0.801-2.079 0.401z"
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Spotify</div>
+								<div class="componentDescription">Kevin</div>
+							</div>
+						</a>
+					</div>
+					<div class="socialsContainer">
+						<!-- <svg class="socialsLogo" viewBox="0 0 915 742" xmlns="http://www.w3.org/2000/svg" overflow="visible">
                     <path style="animation: bounce-y1 2s -2s cubic-bezier(0.93, 0.02, 0.2, 1) alternate infinite;" d="M0 254.224L235.183 741.057L409.125 654.601L585.127 160.048L493.524 0L313.92 302.598L0 254.224Z"
                     fill="var(--pinkish)"/>
                     <path style="animation: bounce-y2 2s -2s cubic-bezier(0.93, 0.02, 0.2, 1) alternate infinite;" d="M687.022 336.049L610.858 212.539L458.529 635.56L833.175 445.149L915 251.651L687.022 336.049Z"
                     fill="var(--pinkish)"/>
                 </svg> -->
-                <!-- <div class="contactDescription">Some places where I exist on the internet.</div> -->
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent discord">
-                    <svg class="componentLogo" xmlns="http://www.w3.org/2000/svg" width="71" height="55" viewBox="0 0 71 55" fill="none">
-                        <g clip-path="url(#clip0)">
-                            <path d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z" fill="#ffffff"/>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0">
-                                <rect width="71" height="55" fill="var(--white)"/>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Discord</div>
-                        <div class="componentDescription">@hyperrrrrrrrrrrrrrrrrr</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent twitter" href="https://twitter.com/thekevinlab">
-                    <svg class="componentLogo" viewBox="0 0 310 310" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="var(--white)" d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73   c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783   c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598   C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467   c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977   c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889   c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597   c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961   c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895   c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367   c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998   C307.394,57.037,305.009,56.486,302.973,57.388z"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Twitter</div>
-                        <div class="componentDescription">@thekevinlab</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent email" href="mailto:hey@thebao.studio">
-                    <svg fill="var(--white)" class="componentLogo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.001 330.001">
-                        <path d="M173.871,177.097c-2.641,1.936-5.756,2.903-8.87,2.903c-3.116,0-6.23-0.967-8.871-2.903L30,84.602   L0.001,62.603L0,275.001c0.001,8.284,6.716,15,15,15L315.001,290c8.285,0,15-6.716,15-14.999V62.602l-30.001,22L173.871,177.097z"/>
-                        <polygon points="165.001,146.4 310.087,40.001 19.911,40  "/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Email</div>
-                        <div class="componentDescription">hey@thebao.studio</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent ig" href="https://www.instagram.com/kevin.h_3/">
-                    <svg class="componentLogo" fill="var(--white)" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 551.034 551.034">
-                        <path d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"/>
-                        <path d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z"/>
-                        <circle cx="418.306" cy="134.072" r="34.149"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Instagram</div>
-                        <div class="componentDescription">@kevin.h_3</div>
-                    </div>
-                </a>
-                <a tabindex="1" rget="_blank" rel="noreferrer noopener" class="socialComponent github" href="https://www.github.com/baostudios">
-                    <svg class="componentLogo" fill="var(--white)" viewBox="0 0 530 530" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="260" cy="259" r="254" fill="none"/>
-                        <path d="M259 0C115.989 0 0 115.967 0 259C0 373.435 74.2035 470.517 177.134 504.769C190.063 507.165 194.25 499.136 194.25 492.316V444.099C122.205 459.768 107.204 413.537 107.204 413.537C95.4199 383.601 78.4338 375.636 78.4338 375.636C54.9296 359.557 80.2253 359.902 80.2253 359.902C106.233 361.715 119.917 386.601 119.917 386.601C143.011 426.185 180.501 414.745 195.286 408.119C197.595 391.392 204.308 379.953 211.733 373.5C154.213 366.917 93.7364 344.707 93.7364 245.489C93.7364 217.193 103.859 194.099 120.413 175.969C117.737 169.429 108.866 143.076 122.939 107.42C122.939 107.42 144.695 100.47 194.185 133.968C214.841 128.227 236.985 125.356 259 125.248C281.015 125.356 303.181 128.227 323.88 133.968C373.327 100.47 395.04 107.42 395.04 107.42C409.134 143.098 400.263 169.451 397.587 175.969C414.206 194.099 424.242 217.215 424.242 245.489C424.242 344.966 363.658 366.874 305.987 373.284C315.268 381.313 323.75 397.069 323.75 421.242V492.316C323.75 499.201 327.894 507.295 341.038 504.748C443.883 470.452 518 373.392 518 259C518 115.967 402.033 0 259 0Z"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">GitHub</div>
-                        <div class="componentDescription">baostudios</div>
-                    </div>
-                </a>
-                <a tabindex="1" target="_blank" rel="noreferrer noopener" class="socialComponent spotify" href="https://open.spotify.com/user/yz4dr6d4xy8k3kja76qgeuzv9">
-                    <svg class="componentLogo" fill="var(--white)" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 0c-8.803 0-16 7.197-16 16s7.197 16 16 16c8.803 0 16-7.197 16-16s-7.12-16-16-16zM23.36 23.12c-0.319 0.479-0.881 0.64-1.36 0.317-3.76-2.317-8.479-2.797-14.083-1.52-0.557 0.165-1.037-0.235-1.199-0.72-0.156-0.557 0.24-1.036 0.719-1.197 6.084-1.36 11.365-0.803 15.521 1.76 0.563 0.24 0.64 0.88 0.401 1.36zM25.281 18.719c-0.401 0.563-1.12 0.803-1.683 0.401-4.317-2.641-10.88-3.437-15.916-1.839-0.641 0.156-1.365-0.161-1.521-0.803-0.161-0.64 0.156-1.359 0.797-1.52 5.844-1.761 13.041-0.876 18 2.161 0.484 0.24 0.724 1.041 0.323 1.599zM25.443 14.24c-5.125-3.043-13.683-3.36-18.563-1.839-0.801 0.239-1.599-0.24-1.839-0.964-0.239-0.797 0.24-1.599 0.959-1.839 5.683-1.681 15.041-1.359 20.964 2.161 0.719 0.401 0.957 1.36 0.557 2.079-0.401 0.563-1.36 0.801-2.079 0.401z"/>
-                    </svg>
-                    <div class="componentHeader">
-                        <div class="componentTitle">Spotify</div>
-                        <div class="componentDescription">Kevin</div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div id="threeCanvas"></div>
-    <div class="footer fade">
-        <div class="footerText">&#169; 2022 <strong>baostudios</strong></div>
-    </div>
-</div>
+						<!-- <div class="contactDescription">Some places where I exist on the internet.</div> -->
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent discord"
+						>
+							<svg
+								class="componentLogo"
+								xmlns="http://www.w3.org/2000/svg"
+								width="71"
+								height="55"
+								viewBox="0 0 71 55"
+								fill="none"
+							>
+								<g clip-path="url(#clip0)">
+									<path
+										d="M60.1045 4.8978C55.5792 2.8214 50.7265 1.2916 45.6527 0.41542C45.5603 0.39851 45.468 0.440769 45.4204 0.525289C44.7963 1.6353 44.105 3.0834 43.6209 4.2216C38.1637 3.4046 32.7345 3.4046 27.3892 4.2216C26.905 3.0581 26.1886 1.6353 25.5617 0.525289C25.5141 0.443589 25.4218 0.40133 25.3294 0.41542C20.2584 1.2888 15.4057 2.8186 10.8776 4.8978C10.8384 4.9147 10.8048 4.9429 10.7825 4.9795C1.57795 18.7309 -0.943561 32.1443 0.293408 45.3914C0.299005 45.4562 0.335386 45.5182 0.385761 45.5576C6.45866 50.0174 12.3413 52.7249 18.1147 54.5195C18.2071 54.5477 18.305 54.5139 18.3638 54.4378C19.7295 52.5728 20.9469 50.6063 21.9907 48.5383C22.0523 48.4172 21.9935 48.2735 21.8676 48.2256C19.9366 47.4931 18.0979 46.6 16.3292 45.5858C16.1893 45.5041 16.1781 45.304 16.3068 45.2082C16.679 44.9293 17.0513 44.6391 17.4067 44.3461C17.471 44.2926 17.5606 44.2813 17.6362 44.3151C29.2558 49.6202 41.8354 49.6202 53.3179 44.3151C53.3935 44.2785 53.4831 44.2898 53.5502 44.3433C53.9057 44.6363 54.2779 44.9293 54.6529 45.2082C54.7816 45.304 54.7732 45.5041 54.6333 45.5858C52.8646 46.6197 51.0259 47.4931 49.0921 48.2228C48.9662 48.2707 48.9102 48.4172 48.9718 48.5383C50.038 50.6034 51.2554 52.5699 52.5959 54.435C52.6519 54.5139 52.7526 54.5477 52.845 54.5195C58.6464 52.7249 64.529 50.0174 70.6019 45.5576C70.6551 45.5182 70.6887 45.459 70.6943 45.3942C72.1747 30.0791 68.2147 16.7757 60.1968 4.9823C60.1772 4.9429 60.1437 4.9147 60.1045 4.8978ZM23.7259 37.3253C20.2276 37.3253 17.3451 34.1136 17.3451 30.1693C17.3451 26.225 20.1717 23.0133 23.7259 23.0133C27.308 23.0133 30.1626 26.2532 30.1066 30.1693C30.1066 34.1136 27.28 37.3253 23.7259 37.3253ZM47.3178 37.3253C43.8196 37.3253 40.9371 34.1136 40.9371 30.1693C40.9371 26.225 43.7636 23.0133 47.3178 23.0133C50.9 23.0133 53.7545 26.2532 53.6986 30.1693C53.6986 34.1136 50.9 37.3253 47.3178 37.3253Z"
+										fill="#ffffff"
+									/>
+								</g>
+								<defs>
+									<clipPath id="clip0">
+										<rect
+											width="71"
+											height="55"
+											fill="var(--white)"
+										/>
+									</clipPath>
+								</defs>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Discord</div>
+								<div class="componentDescription">
+									@hyperrrrrrrrrrrrrrrrrr
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent twitter"
+							href="https://twitter.com/thekevinlab"
+						>
+							<svg
+								class="componentLogo"
+								viewBox="0 0 310 310"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									fill="var(--white)"
+									d="M302.973,57.388c-4.87,2.16-9.877,3.983-14.993,5.463c6.057-6.85,10.675-14.91,13.494-23.73   c0.632-1.977-0.023-4.141-1.648-5.434c-1.623-1.294-3.878-1.449-5.665-0.39c-10.865,6.444-22.587,11.075-34.878,13.783   c-12.381-12.098-29.197-18.983-46.581-18.983c-36.695,0-66.549,29.853-66.549,66.547c0,2.89,0.183,5.764,0.545,8.598   C101.163,99.244,58.83,76.863,29.76,41.204c-1.036-1.271-2.632-1.956-4.266-1.825c-1.635,0.128-3.104,1.05-3.93,2.467   c-5.896,10.117-9.013,21.688-9.013,33.461c0,16.035,5.725,31.249,15.838,43.137c-3.075-1.065-6.059-2.396-8.907-3.977   c-1.529-0.851-3.395-0.838-4.914,0.033c-1.52,0.871-2.473,2.473-2.513,4.224c-0.007,0.295-0.007,0.59-0.007,0.889   c0,23.935,12.882,45.484,32.577,57.229c-1.692-0.169-3.383-0.414-5.063-0.735c-1.732-0.331-3.513,0.276-4.681,1.597   c-1.17,1.32-1.557,3.16-1.018,4.84c7.29,22.76,26.059,39.501,48.749,44.605c-18.819,11.787-40.34,17.961-62.932,17.961   c-4.714,0-9.455-0.277-14.095-0.826c-2.305-0.274-4.509,1.087-5.294,3.279c-0.785,2.193,0.047,4.638,2.008,5.895   c29.023,18.609,62.582,28.445,97.047,28.445c67.754,0,110.139-31.95,133.764-58.753c29.46-33.421,46.356-77.658,46.356-121.367   c0-1.826-0.028-3.67-0.084-5.508c11.623-8.757,21.63-19.355,29.773-31.536c1.237-1.85,1.103-4.295-0.33-5.998   C307.394,57.037,305.009,56.486,302.973,57.388z"
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Twitter</div>
+								<div class="componentDescription">
+									@thekevinlab
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent email"
+							href="mailto:hey@thebao.studio"
+						>
+							<svg
+								fill="var(--white)"
+								class="componentLogo"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 330.001 330.001"
+							>
+								<path
+									d="M173.871,177.097c-2.641,1.936-5.756,2.903-8.87,2.903c-3.116,0-6.23-0.967-8.871-2.903L30,84.602   L0.001,62.603L0,275.001c0.001,8.284,6.716,15,15,15L315.001,290c8.285,0,15-6.716,15-14.999V62.602l-30.001,22L173.871,177.097z"
+								/>
+								<polygon
+									points="165.001,146.4 310.087,40.001 19.911,40  "
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Email</div>
+								<div class="componentDescription">
+									hey@thebao.studio
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent ig"
+							href="https://www.instagram.com/kevin.h_3/"
+						>
+							<svg
+								class="componentLogo"
+								fill="var(--white)"
+								xmlns="http://www.w3.org/2000/svg"
+								viewBox="0 0 551.034 551.034"
+							>
+								<path
+									d="M386.878,0H164.156C73.64,0,0,73.64,0,164.156v222.722   c0,90.516,73.64,164.156,164.156,164.156h222.722c90.516,0,164.156-73.64,164.156-164.156V164.156   C551.033,73.64,477.393,0,386.878,0z M495.6,386.878c0,60.045-48.677,108.722-108.722,108.722H164.156   c-60.045,0-108.722-48.677-108.722-108.722V164.156c0-60.046,48.677-108.722,108.722-108.722h222.722   c60.045,0,108.722,48.676,108.722,108.722L495.6,386.878L495.6,386.878z"
+								/>
+								<path
+									d="M275.517,133C196.933,133,133,196.933,133,275.516   s63.933,142.517,142.517,142.517S418.034,354.1,418.034,275.516S354.101,133,275.517,133z M275.517,362.6   c-48.095,0-87.083-38.988-87.083-87.083s38.989-87.083,87.083-87.083c48.095,0,87.083,38.988,87.083,87.083   C362.6,323.611,323.611,362.6,275.517,362.6z"
+								/>
+								<circle cx="418.306" cy="134.072" r="34.149" />
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Instagram</div>
+								<div class="componentDescription">
+									@kevin.h_3
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							rget="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent github"
+							href="https://www.github.com/baostudios"
+						>
+							<svg
+								class="componentLogo"
+								fill="var(--white)"
+								viewBox="0 0 530 530"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<circle cx="260" cy="259" r="254" fill="none" />
+								<path
+									d="M259 0C115.989 0 0 115.967 0 259C0 373.435 74.2035 470.517 177.134 504.769C190.063 507.165 194.25 499.136 194.25 492.316V444.099C122.205 459.768 107.204 413.537 107.204 413.537C95.4199 383.601 78.4338 375.636 78.4338 375.636C54.9296 359.557 80.2253 359.902 80.2253 359.902C106.233 361.715 119.917 386.601 119.917 386.601C143.011 426.185 180.501 414.745 195.286 408.119C197.595 391.392 204.308 379.953 211.733 373.5C154.213 366.917 93.7364 344.707 93.7364 245.489C93.7364 217.193 103.859 194.099 120.413 175.969C117.737 169.429 108.866 143.076 122.939 107.42C122.939 107.42 144.695 100.47 194.185 133.968C214.841 128.227 236.985 125.356 259 125.248C281.015 125.356 303.181 128.227 323.88 133.968C373.327 100.47 395.04 107.42 395.04 107.42C409.134 143.098 400.263 169.451 397.587 175.969C414.206 194.099 424.242 217.215 424.242 245.489C424.242 344.966 363.658 366.874 305.987 373.284C315.268 381.313 323.75 397.069 323.75 421.242V492.316C323.75 499.201 327.894 507.295 341.038 504.748C443.883 470.452 518 373.392 518 259C518 115.967 402.033 0 259 0Z"
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">GitHub</div>
+								<div class="componentDescription">
+									baostudios
+								</div>
+							</div>
+						</a>
+						<a
+							tabindex="1"
+							target="_blank"
+							rel="noreferrer noopener"
+							class="socialComponent spotify"
+							href="https://open.spotify.com/user/yz4dr6d4xy8k3kja76qgeuzv9"
+						>
+							<svg
+								class="componentLogo"
+								fill="var(--white)"
+								viewBox="0 0 32 32"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M16 0c-8.803 0-16 7.197-16 16s7.197 16 16 16c8.803 0 16-7.197 16-16s-7.12-16-16-16zM23.36 23.12c-0.319 0.479-0.881 0.64-1.36 0.317-3.76-2.317-8.479-2.797-14.083-1.52-0.557 0.165-1.037-0.235-1.199-0.72-0.156-0.557 0.24-1.036 0.719-1.197 6.084-1.36 11.365-0.803 15.521 1.76 0.563 0.24 0.64 0.88 0.401 1.36zM25.281 18.719c-0.401 0.563-1.12 0.803-1.683 0.401-4.317-2.641-10.88-3.437-15.916-1.839-0.641 0.156-1.365-0.161-1.521-0.803-0.161-0.64 0.156-1.359 0.797-1.52 5.844-1.761 13.041-0.876 18 2.161 0.484 0.24 0.724 1.041 0.323 1.599zM25.443 14.24c-5.125-3.043-13.683-3.36-18.563-1.839-0.801 0.239-1.599-0.24-1.839-0.964-0.239-0.797 0.24-1.599 0.959-1.839 5.683-1.681 15.041-1.359 20.964 2.161 0.719 0.401 0.957 1.36 0.557 2.079-0.401 0.563-1.36 0.801-2.079 0.401z"
+								/>
+							</svg>
+							<div class="componentHeader">
+								<div class="componentTitle">Spotify</div>
+								<div class="componentDescription">Kevin</div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div id="threeCanvas"></div>
+			<div class="footer fade">
+				<div class="footerText">
+					&#169; 2023 <strong>baostudios</strong>
+				</div>
+			</div>
+		</div>
 
-<script type="module" src="../scripts/cursor.js"></script>
-<script type="module" src="../scripts/gradient.js"></script>
-<!--<script type="module" src="../scripts/contact.js"></script>-->
-
-</body>
-
+		<script type="module" src="../scripts/cursor.js"></script>
+		<script type="module" src="../scripts/gradient.js"></script>
+		<!--<script type="module" src="../scripts/contact.js"></script>-->
+	</body>
 </html>
