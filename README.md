@@ -1,2 +1,2 @@
 # thebao.studio
- my new and revamped personal website.
+to be fixed
