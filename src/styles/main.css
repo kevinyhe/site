@@ -236,12 +236,12 @@ body {
 }
 
 .line {
-    border-right: 3px var(--white) solid;
+    border-right: 0.1em var(--white) solid;
     height: 0;
     transform: rotate(-50deg);
 
     animation: expand 1s cubic-bezier(0.23, 0.66, 0.19, 0.99) forwards;
-    animation-delay: 0.6s;
+    animation-delay: 0s;
 }
 
 .eye {
@@ -453,7 +453,6 @@ body {
 
 @keyframes expand {
     from {
-        opacity: 0;
         transform: rotate(50deg);
         height: 0;
     }
@@ -527,6 +526,8 @@ body {
 
     .line {
         height: 0;
+        border-bottom: 0.1px;
+        opacity: 0.5;
         transform: rotate(90deg) !important;
         margin-top: -200px;
         margin-bottom: -230px;

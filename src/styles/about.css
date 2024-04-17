@@ -92,10 +92,10 @@ body {
     position: fixed;
     width: 100%;
     height: 100%;
-    --gradient-color-1: #a960ee;
-    --gradient-color-2: #ff333d;
-    --gradient-color-3: #90e0ff;
-    --gradient-color-4: #ffcb57;
+    --gradient-color-1: #cb2727;
+    --gradient-color-2: #ffcb57;
+    --gradient-color-3: #ff3377;
+    --gradient-color-4: #ff9090;
     z-index: 0;
 }
 
