@@ -186,7 +186,7 @@ body {
 }
 
 .contactDescription {
-    animation: slide-in-left cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
+    animation: slide-in-left cubic-bezier(0.23, 0.66, 0.19, 0.99) 2s forwards;
     font-size: 24px;
     font-family: "DM Serif Display", var(--font);
     margin-top: -45%;
@@ -231,14 +231,14 @@ body {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    transition: ease-in-out 200ms;
+    transition: 0.5s;
 
-    animation: slide-in-right cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
+    animation: slide-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
     opacity: 0.75;
 }
 
 .socialComponent:hover {
-    transform: scale(1.03) !important;
+    transform: scale(1.03) translateX(-10%);
 }
 
 .socialComponent:focus {
@@ -275,7 +275,7 @@ body {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     border-radius: 10px;
     z-index: -1;
-    transition: opacity ease-in-out 200ms;
+    transition: opacity ease-in-out 500ms;
     opacity: 0;
 
     filter: drop-shadow(0px 0px 20px #e6683c);
@@ -286,8 +286,8 @@ body {
 }
 
 .github:hover {
-    background: var(--pinkish);
-    filter: drop-shadow(0px 0px 20px var(--pinkish));
+    background: var(--blackish);
+    filter: drop-shadow(0px 0px 20px var(--blackish));
 }
 
 .spotify:hover {
@@ -454,6 +454,18 @@ body {
     to {
         opacity: 1;
         transform: translateX(0);
+    }
+}
+
+@keyframes slide-in-top {
+    from {
+        filter: blur(20px);
+        transform: translateY(-100%) scale(0.85);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
