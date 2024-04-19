@@ -525,7 +525,7 @@ class MiniGl {
 		};
 	}
 
-	setSize(e = 3840, t = 2160) {
+	setSize(e = 1920, t = 1080) {
 		(this.width = e),
 			(this.height = t),
 			(this.canvas.width = e),
