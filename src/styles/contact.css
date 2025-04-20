@@ -116,7 +116,7 @@ body {
 }
 
 #cursor {
-    transition-duration: 0.2s;
+    /* transition-duration: 0.2s; */
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
     mix-blend-mode: difference;
