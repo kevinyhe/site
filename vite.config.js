@@ -31,7 +31,6 @@ export default defineConfig({
 				main: resolve(root, "index.html"),
 				contact: resolve(root, "contact/index.html"),
 				projects: resolve(root, "about/index.html"),
-				manewer: resolve(root, "manewer/index.html"),
 			},
 		},
 	},
