@@ -228,6 +228,16 @@ body {
     line-height: 1.7;
     font-size: 16px;
 }
+#handy {
+    color: var(--white) !important;
+    margin-top: 4px;
+    animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.99) 2s forwards;
+    /* text-align: justify; */
+    text-align: center;
+
+    line-height: 1.7;
+    font-size: 16px;
+}
 
 .quoteAuthor {
     font-family: 'IBM Plex Serif', var(--font);
