@@ -544,6 +544,7 @@ body {
     .line {
         height: 0;
         border-bottom: 0.1px;
+       width: 250px;
         opacity: 0.5;
         transform: rotate(90deg) !important;
         margin-top: -200px;
