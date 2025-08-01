@@ -161,47 +161,17 @@ body {
 
 .skillContainer {
     margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    max-width: 800px;
 }
 
 .skillLogo {
     width: 50px;
     height: 100%;
-}
-
-#html {
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.2s forwards;
-}
-
-#css {
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.4s forwards;
-}
-
-#js {
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.6s forwards;
-}
-
-#ts {
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.8s forwards;
-}
-
-#cpp {
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2s forwards;
-}
-
-#mongo {
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2.2s forwards;
-}
-
-#java {
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2.4s forwards;
-}
-
-#blender {
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2.6s forwards;
-}
-
-#figma {
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 2.8s forwards;
+	opacity: 0;
 }
 
 .about {
@@ -228,6 +198,7 @@ body {
     line-height: 1.7;
     font-size: 16px;
 }
+
 #handy {
     color: var(--white) !important;
     margin-top: 4px;
