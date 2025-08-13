@@ -100,34 +100,6 @@ body.single-page-mode #appMount {
     align-items: stretch;
     justify-content: flex-start;
 }
-
-#gradient-canvas {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    --gradient-color-1: #cb2727;
-    --gradient-color-2: #ffcb57;
-    --gradient-color-3: #ff3377;
-    --gradient-color-4: #ff9090;
-    z-index: 0;
-
-    animation: gradient-expand 5s cubic-bezier(0, .79, 0, .99) forwards
-}
-
-#noiseBg {
-    animation: grain 4s steps(10) infinite;
-    background: url("/img/noise.png");
-    height: 300%;
-    width: 300%;
-    left: -50%;
-    top: -125%;
-    opacity: 0;
-    position: fixed;
-    z-index: 1000;
-
-    pointer-events: none
-}
-
 #cursor {
     /* transition-duration: 0.5s; */
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);

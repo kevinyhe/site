@@ -81,6 +81,7 @@ body {
     --gradient-color-3: #c989ff;
     --gradient-color-4: #547cff;
     z-index: 0;
+    overflow: hidden;
     animation: gradient-expand 5s cubic-bezier(0, .79, 0, .99) forwards
 }
 
@@ -678,7 +679,7 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    max-width: 1200px;
+    max-width: 1000px;
     padding: 0 20px;
 }
 

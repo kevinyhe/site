@@ -1,9 +1,7 @@
-/* Single Page Layout Styles */
 html {
     scroll-behavior: smooth;
 }
 
-/* Lock page-level scrolling; the inner appMount handles vertical scroll */
 html,
 body {
     height: 100%;
@@ -15,7 +13,6 @@ body {
     /* keep x locked explicitly */
 }
 
-/* Section Layout */
 .section {
     min-height: 100vh;
     width: 100%;
@@ -28,7 +25,6 @@ body {
     overflow-x: hidden;
 }
 
-/* Home section specific layout */
 .home-section {
     min-height: 100vh;
     display: flex;
@@ -36,7 +32,6 @@ body {
     justify-content: center;
 }
 
-/* Container for smooth scrolling */
 #appMount {
     scroll-snap-type: y mandatory;
     overflow-y: auto;
@@ -46,31 +41,15 @@ body {
     scroll-padding-top: 80px;
 }
 
-/* Section-specific styles */
-/* .home-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d1b3d 50%, #1a1a1a 100%);
-}
-
-.about-section {
-    background: linear-gradient(135deg, #2d1b3d 0%, #4a1b3d 50%, #2d1b3d 100%);
-}
-
-.contact-section {
-    background: linear-gradient(135deg, #4a1b3d 0%, #6a1b3d 50%, #4a1b3d 100%);
-} */
-
-/* Fix noise background positioning for single page */
 body.single-page-mode #noiseBg {
     position: fixed;
     z-index: 999;
 }
 
-/* Smooth background transitions */
 .section {
     transition: background 0.8s ease-in-out;
 }
 
-/* Navigation adjustments for single page */
 .navContainer {
     position: fixed;
     top: 0;
