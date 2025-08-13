@@ -32,6 +32,13 @@ class ScrollTransitions {
 	}
 
 	init() {
+		// Prevent the browser from restoring previous scroll positions
+		try {
+			if ("scrollRestoration" in history) {
+				history.scrollRestoration = "manual";
+			}
+		} catch (_) {}
+
 		// Resolve scroll container (single page uses #appMount)
 		this.container =
 			document.getElementById("appMount") ||
@@ -57,14 +64,22 @@ class ScrollTransitions {
 		this.setupSnapController();
 		this.setupAnchorNavigation();
 
-		// If landing with a hash, center-snap to it
+		// Center-snap on initial load
 		const initialHash = (window.location.hash || "").replace(/^#/, "");
 		if (initialHash && this.idToIndex.has(initialHash)) {
-			// Defer to ensure geometry is ready
+			// Respect direct links like #about or #contact
 			setTimeout(() => {
 				this.scrollToIndex &&
 					this.scrollToIndex(this.idToIndex.get(initialHash));
 			}, 0);
+		} else {
+			// Default to Home
+			setTimeout(() => {
+				this.scrollToIndex && this.scrollToIndex(0);
+			}, 0);
+			try {
+				history.replaceState(null, "", "#home");
+			} catch (_) {}
 		}
 
 		// Initialize with home colors

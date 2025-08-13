@@ -48,7 +48,7 @@ body {
         sans-serif;
     overflow-x: hidden;
     overflow-y: auto;
-    scroll-behavior: smooth;
+    /* scroll-behavior: smooth;  // JS handles snaps; prevents initial load jank */
 
     color: var(--white);
 
@@ -617,6 +617,7 @@ section {
     align-items: center;
     position: relative;
     z-index: 1;
+    overflow: hidden;
 }
 
 /* Home Section Styles */
@@ -647,16 +648,8 @@ section {
     border-right: 0.1em var(--white) solid;
     height: 0;
     transform: rotate(-50deg);
-    animation: expand 1s cubic-bezier(0.23, 0.66, 0.19, 0.99) forwards;
+    animation: expand 0.6s ease-out forwards;
     animation-delay: 0s;
-}
-
-/* About Section Styles - Using original about.css layout */
-#about .content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 80px 40px;
 }
 
 #about .title {
@@ -689,7 +682,7 @@ section {
     transition: all 0.3s ease;
     filter: brightness(0.8);
     opacity: 0;
-    animation: fade-in-left 0.3s ease-out forwards;
+    animation: fade-in-left 0.25s ease-out forwards;
 }
 
 #about .skillLogo:hover {
@@ -738,7 +731,6 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    overflow: hidden;
     position: relative;
     /* anchor absolute children like footer */
     z-index: 1;

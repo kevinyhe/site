@@ -119,15 +119,6 @@ body.single-page-mode #appMount {
     z-index: 9999;
 }
 
-.content {
-    user-select: none;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    /* position: relative; */
-    z-index: 1;
-}
 
 .wrapper {
     display: flex;
