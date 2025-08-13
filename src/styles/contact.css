@@ -65,11 +65,17 @@ body {
     margin: 0;
     font-family: var(--font),
         sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 
     color: var(--white);
 
     background-color: var(--black);
+}
+
+/* Single page mode overrides */
+body.single-page-mode {
+    overflow: hidden;
 }
 
 .fade {
@@ -86,6 +92,13 @@ body {
 
     transition-duration: 1s;
 
+}
+
+/* Single page mode overrides */
+body.single-page-mode #appMount {
+    display: block;
+    align-items: stretch;
+    justify-content: flex-start;
 }
 
 #gradient-canvas {
@@ -179,6 +192,7 @@ body {
 
     transform: rotateX(180deg) translateY(50%);
     background: rgba(200, 200, 200, 0.15);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -190,7 +204,7 @@ body {
 .contactDescription {
     animation: slide-in-left cubic-bezier(0.23, 0.66, 0.19, 0.99) 2s forwards;
     font-size: 24px;
-    font-family: "DM Serif Display", var(--font);
+    font-family: var(--font);
     margin-top: -45%;
 }
 
@@ -337,32 +351,9 @@ body {
     width: 45px;
     margin-left: 40px;
     /* align-self: flex-end; */
-    justify-self: baseline;
+    justify-self: flex-end;
 }
 
-.footer {
-    display: flex;
-    user-select: none;
-    flex-direction: column;
-
-    position: absolute;
-
-    bottom: 10px;
-    left: 10px;
-    z-index: 2;
-
-    animation: fade-in-bottom cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
-    animation-delay: 0.2s;
-}
-
-.footerText strong {
-    color: var(--pinkish);
-}
-
-.footerText {
-    color: var(--white);
-    font-size: 12px;
-}
 
 .navContainer {
     display: flex;
@@ -386,17 +377,6 @@ body {
     animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.77) 0.5s forwards;
 }
 
-.navLinks {
-    /* transition-duration: 500ms; */
-
-    /* display: none; */
-    flex-direction: row;
-    justify-content: space-around;
-    /*width: 180px;*/
-
-    margin-left: 6px;
-    margin-right: 10px;
-}
 
 .navLogo, .socialsLogo {
     padding: 3px 3px;
@@ -418,30 +398,10 @@ body {
     width: 20px;
 }
 
-.navLinks a {
-    color: var(--greyish);
-    text-decoration: none;
-    font-size: 14px;
-}
-
-.navLinks a:hover {
-    background: none;
-    color: var(--pinkish);
-}
 
 /* .navContainer:hover .navLinks {
     display: flex;
 } */
-
-.navLink {
-    transition-duration: 200ms;
-    color: var(--white);
-    margin-right: 6px;
-}
-
-.navLink:last-child {
-    margin-right: 0;
-}
 
 .hidden {
     display: none !important;

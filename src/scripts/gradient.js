@@ -591,6 +591,8 @@ function e(object, propertyName, val) {
 class Gradient {
 	constructor(...t) {
 		e(this, "el", void 0),
+			// Observer for CSS var changes so colors update live
+			e(this, "cssVarObserver", void 0),
 			e(this, "cssVarRetries", 0),
 			e(this, "maxCssVarRetries", 200),
 			e(this, "angle", 0),
@@ -630,6 +632,98 @@ class Gradient {
 			e(this, "isMetaKey", !1),
 			e(this, "isGradientLegendVisible", !1),
 			e(this, "isMouseDown", !1),
+			// Cache last seen CSS hex colors to avoid redundant updates
+			e(this, "lastCssHexColors", void 0),
+			// Refresh shader colors from current CSS variables
+			e(this, "refreshColorsFromCssVars", () => {
+				if (!this.el) return;
+				const style = getComputedStyle(this.el);
+				const names = [
+					"--gradient-color-1",
+					"--gradient-color-2",
+					"--gradient-color-3",
+					"--gradient-color-4",
+				];
+				const hexColors = names
+					.map((n) => (style.getPropertyValue(n) || "").trim())
+					.map((hex) => {
+						if (!hex) return hex;
+						if (hex.length === 4 && hex[0] === "#") {
+							const dbl = hex
+								.substr(1)
+								.split("")
+								.map((c) => c + c)
+								.join("");
+							return `#${dbl}`;
+						}
+						return hex;
+					});
+				// If unchanged, skip
+				if (
+					this.lastCssHexColors &&
+					hexColors.length === this.lastCssHexColors.length &&
+					hexColors.every((h, i) => h === this.lastCssHexColors[i])
+				)
+					return;
+
+				this.lastCssHexColors = hexColors;
+				// Convert to normalized RGB arrays
+				const normalized = hexColors
+					.filter(Boolean)
+					.map((h) => `0x${h.substr(1)}`)
+					.map(normalizeColor);
+
+				if (normalized.length < 4) return;
+
+				// Update cached colors
+				this.sectionColors = normalized;
+
+				// If uniforms exist, push live values so shader updates next draw
+				if (this.uniforms) {
+					// Base color
+					if (this.uniforms.u_baseColor)
+						this.uniforms.u_baseColor.value = normalized[0];
+					// Wave layer colors (indices 1..3 map to array [0..2])
+					if (
+						this.uniforms.u_waveLayers &&
+						Array.isArray(this.uniforms.u_waveLayers.value)
+					) {
+						for (let i = 1; i < normalized.length; i++) {
+							const layer =
+								this.uniforms.u_waveLayers.value[i - 1];
+							if (layer && layer.value && layer.value.color) {
+								layer.value.color.value = normalized[i];
+							}
+						}
+					}
+				}
+			}),
+			// Observe :root style changes that modify CSS variables
+			e(this, "startCssVarObserver", () => {
+				try {
+					if (this.cssVarObserver) {
+						this.cssVarObserver.disconnect();
+					}
+					this.cssVarObserver = new MutationObserver(() => {
+						this.refreshColorsFromCssVars();
+					});
+					// Observe :root and the canvas element since we may set vars on either
+					this.cssVarObserver.observe(document.documentElement, {
+						attributes: true,
+						attributeFilter: ["style"],
+					});
+					if (this.el) {
+						this.cssVarObserver.observe(this.el, {
+							attributes: true,
+							attributeFilter: ["style"],
+						});
+					}
+					// Also refresh immediately to sync initial state
+					this.refreshColorsFromCssVars();
+				} catch (err) {
+					// Fallback: no-op if MutationObserver not available
+				}
+			}),
 			e(this, "handleScroll", () => {
 				clearTimeout(this.scrollingTimeout),
 					(this.scrollingTimeout = setTimeout(
@@ -681,6 +775,8 @@ class Gradient {
 						let e = 160;
 						this.isMetaKey && (e = -160), (this.t += e);
 					}
+					// Ensure the canvas is aware of any recent CSS var changes
+					// (observer triggers updates; this keeps animation flowing)
 					(this.mesh.material.uniforms.u_time.value = this.t),
 						this.minigl.render();
 				}
@@ -926,7 +1022,7 @@ class Gradient {
 					.getPropertyValue("--gradient-color-1")
 					.indexOf("#")
 		)
-			this.init(), this.addIsLoadedClass();
+			this.init(), this.addIsLoadedClass(), this.startCssVarObserver();
 		else {
 			if (
 				((this.cssVarRetries += 1),
@@ -936,7 +1032,7 @@ class Gradient {
 					(this.sectionColors = [
 						16711680, 16711680, 16711935, 65280, 255,
 					]),
-					void this.init()
+					void (this.init(), this.startCssVarObserver())
 				);
 			}
 			requestAnimationFrame(() => this.waitForCssVars());
@@ -967,6 +1063,17 @@ class Gradient {
 			})
 			.filter(Boolean)
 			.map(normalizeColor);
+
+		// Seed lastCssHexColors for change detection
+		try {
+			const style = this.computedCanvasStyle || getComputedStyle(this.el);
+			this.lastCssHexColors = [
+				style.getPropertyValue("--gradient-color-1").trim(),
+				style.getPropertyValue("--gradient-color-2").trim(),
+				style.getPropertyValue("--gradient-color-3").trim(),
+				style.getPropertyValue("--gradient-color-4").trim(),
+			];
+		} catch (_) {}
 	}
 }
 
