@@ -1,4 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Serif:wght@100;200;400&family=Inter:wght@400;500&family=Poppins:wght@400;500&display=swap');
+@keyframes arrow-bounce-down {
+    0% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+
+    40% {
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(16px);
+        opacity: 1;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 0.8;
+    }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Serif:wght@100;200;400&family=Inter:wght@400;500&family=Poppins:wght@400;500&display=swap');
 
 /* ==========================================================================
    Custom styles
@@ -14,6 +39,71 @@
     --font: "Inter", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
         Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
+
+#awards {
+    margin-top: 200px;
+}
+/* Awards section */
+#awards .content {
+    align-items: stretch;
+}
+
+#awards .title {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto 16px;
+    font-size: 135px;
+    font-family: 'DM Serif Display', var(--font);
+}
+
+.awardsContainer {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    text-align: left;
+}
+
+.awardsGroup {
+    background: transparent;
+    border: 0;
+    padding: 0;
+    margin: 16px 0;
+}
+
+.awardsGroup h3 {
+    margin: 0 0 6px;
+    font-size: 22px;
+    font-family: 'DM Serif Display', var(--font);
+    color: var(--white);
+}
+
+.awardsGroup ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    font-family: 'IBM Plex Serif', var(--font);
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--greyish);
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+    text-align: left;
+}
+
+.awardsGroup li {
+    margin: 2px 0;
+    list-style: none;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+}
+
+
+
 
 * {
     cursor: none !important;
@@ -60,7 +150,7 @@ body {
 }
 
 #appMount {
-    min-height: 100vh;
+    /* min-height: 100vh; */
 
     display: flex;
     flex-direction: column;
@@ -129,7 +219,7 @@ body {
 #curtain {
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    /* height: 100vh; */
     background-color: var(--black);
 
     right: 0;
@@ -140,11 +230,11 @@ body {
 }
 
 .content {
-    min-height: 100vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     position: relative;
     z-index: 1;
     padding: 40px 20px;
@@ -192,7 +282,7 @@ body {
     text-align: right;
     user-select: none;
 
-    width: 400px;
+    width: 420px;
     margin-top: 8px;
     font-size: 14px;
     overflow-wrap: normal;
@@ -216,6 +306,7 @@ body {
 
 .titleAbout {
     overflow-wrap: normal;
+    font-size: 14px;
     margin-top: -15px;
     width: 480px;
     font-weight: 650;
@@ -279,10 +370,17 @@ body {
     animation-delay: 0.2s;
 }
 
-/* Place footer within the contact section's content (bottom-centered) */
+#contact {
+    min-height: 1200px;
+}
+
+#contact .content {
+    min-height: 1200px;
+}
+
 #contact .footer {
     position: absolute;
-    bottom: 50px;
+    bottom: 20px;
     left: 20px;
 }
 
@@ -605,12 +703,9 @@ body {
     }
 }
 
-/* ==========================================================================
-   Single Page Sections
-   ========================================================================== */
 
 section {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -620,15 +715,14 @@ section {
     overflow: hidden;
 }
 
-/* Home Section Styles */
 #home {
+    height: 100vh;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
 #home .content {
-    height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -642,6 +736,17 @@ section {
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-end;
+}
+
+#home .down-arrow-cta {
+    position: absolute;
+    left: 50%;
+    bottom: 32px;
+    transform: translateX(-50%);
+    color: var(--white);
+    pointer-events: none;
+    user-select: none;
+    animation: arrow-bounce-down 1.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
 #home .line {
@@ -666,14 +771,26 @@ section {
     color: var(--pinkish);
 }
 
+#about .title i {
+    font-style: italic;
+    /* font-size: 115px; */
+}
+
 #about .skillContainer {
-    margin-top: 50px;
+    margin-top: 16px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    max-width: 1000px;
+    min-width: 600px;
     padding: 0 20px;
+}
+
+#about {
+    /* margin-top: 200px; */
+    /* height: 1900px; */
+    justify-content: start;
+    /* align-items: start; */
 }
 
 #about .skillLogo {
@@ -691,11 +808,11 @@ section {
 }
 
 #about .about {
-    max-width: 800px;
+    max-width: 600px;
     text-align: center;
     color: var(--white);
     font-family: var(--font);
-    margin-top: 40px;
+    /* margin-top: 40px; */
 }
 
 #about .quote {
@@ -711,6 +828,30 @@ section {
     color: var(--greyish);
 }
 
+#about .aboutDescription {
+    font-family: 'IBM Plex Serif', var(--font);
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 18px;
+    /* match quote size */
+    color: var(--greyish);
+    /* match quote tone */
+    max-width: 800px;
+    margin: 0 auto 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+#about .aboutDescription p {
+    margin: 0 0 14px
+}
+
+#about .aboutDescription p strong {
+    font-weight: 800px;
+    color: var(--pinkish);
+}
+
 #about #keylabs, #about #handy {
     margin: 15px 0;
 }
@@ -724,6 +865,10 @@ section {
 
 #about #keylabs a:hover, #about #handy a:hover {
     background: rgba(253, 149, 208, 0.1);
+}
+
+#about #enjoy {
+    margin-top: 380px;
 }
 
 #contact .content {
@@ -778,27 +923,27 @@ section {
 
 #contact .contactDescription {
     animation: slide-in-left cubic-bezier(0.23, 0.66, 0.19, 0.99) 2s forwards;
-    font-size: 24px;
-    font-family: "DM Serif Display", var(--font);
+    font-size: 16px;
+    font-family: 'IBM Plex Serif', var(--font);
     margin-top: -45%;
 }
 
 #contact .socialsScroll {
-    top: 3%;
+    top: 15%;
     right: -65%;
     width: 100%;
     height: 100%;
     margin-bottom: -50%;
     -webkit-mask-image: linear-gradient(to bottom,
-            transparent 7%,
+            transparent 0%,
             #000 38%,
-            #000 62%,
-            transparent 93%);
+            #000 52%,
+            transparent 83%);
     mask-image: linear-gradient(to bottom,
-            transparent 7%,
+            transparent 0%,
             #000 38%,
-            #000 62%,
-            transparent 93%);
+            #000 52%,
+            transparent 83%);
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
     -webkit-mask-size: 100% 100%;

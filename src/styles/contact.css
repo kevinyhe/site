@@ -84,8 +84,6 @@ body.single-page-mode {
 
 
 #appMount {
-    height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -131,7 +129,8 @@ body.single-page-mode #appMount {
 .scrollContainer {
     position: relative;
     /* width: 100vw; */
-    height: 100vh;
+    height: 60vh;
+    
     overflow-y: hidden;
 }
 
@@ -215,7 +214,8 @@ body.single-page-mode #appMount {
     transition: 0.5s;
 
     animation: slide-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
-    opacity: 0.75;
+    opacity: 1;
+    /* don’t fade when not hovered */
 }
 
 .socialComponent:hover {

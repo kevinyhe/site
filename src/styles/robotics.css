@@ -1,0 +1,159 @@
+.aboutRobotics .subtitle {
+    font-size: 65px;
+    line-height: 0.9;
+    font-family: 'DM Serif Display', var(--font);
+    margin-bottom: 12px;
+    color: var(--white);
+}
+
+.aboutRobotics .subtitle strong {
+    color: var(--pinkish);
+}
+
+.aboutRoboticsGrid {
+    display: flex;
+    gap: 28px;
+    width: 550px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+@media (max-width: 900px) {
+    .aboutRoboticsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Messy collage layout */
+.collage {
+    position: relative;
+    width: 90%;
+    aspect-ratio: 16 / 10;
+    /* canvas area */
+    overflow: visible;
+    /* allow overlap on hover */
+}
+
+.collage img {
+    position: absolute;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+    transition: transform 200ms ease, box-shadow 200ms ease, z-index 0s;
+    will-change: transform;
+    cursor: pointer;
+}
+
+/* Place and rotate each image; store rotation in --rot so hover can preserve it */
+.collage img:nth-child(1) {
+    width: 90%;
+    top: 28%;
+    left: 92%;
+    --rot: 1deg;
+    transform: rotate(var(--rot));
+    z-index: 2;
+}
+
+.collage img:nth-child(2) {
+    width: 87%;
+    top: 10%;
+    right: 5%;
+    --rot: 0.5deg;
+    transform: rotate(var(--rot));
+    z-index: 3;
+}
+
+.collage img:nth-child(3) {
+    width: 78%;
+    top: 115%;
+    left: 97%;
+    --rot: 2deg;
+    transform: rotate(var(--rot));
+    z-index: 1;
+}
+
+.collage img:nth-child(4) {
+    height: 170%;
+    width: 90%;
+    top: 26%;
+    left: -75%;
+    --rot: -2deg;
+    transform: rotate(var(--rot));
+    z-index: 4;
+}
+
+.collage img:nth-child(5) {
+    width: 100%;
+    top: 100%;
+    left: 1%;
+    --rot: -0.5deg;
+    transform: rotate(var(--rot));
+    z-index: 4;
+}
+
+.collage img:hover {
+    /* z-index: 99; */
+    transform: rotate(var(--rot)) scale(1.03);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.35);
+}
+
+/* Mobile/tablet fallback: stack neatly */
+@media (max-width: 900px) {
+    .collage {
+        position: static;
+        aspect-ratio: auto;
+    }
+
+    .collage img {
+        position: static;
+        display: block;
+        width: 100%;
+        height: auto;
+        transform: none;
+        /* ignore rotation on small screens for readability */
+        box-shadow: none;
+        border-radius: 6px;
+        margin-bottom: 10px;
+    }
+}
+
+.cards {
+    display: flex;
+    gap: 16px;
+}
+
+.awardsCard {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 16px 18px;
+    opacity: 1;
+    width: fit-content;
+    text-wrap: nowrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 520px;
+}
+
+.awardsCard h3 {
+    margin: 0 0 8px;
+    font-size: 36px;
+    font-family: 'DM Serif Display', var(--font);
+}
+
+.awardsCard ul {
+    margin: 0;
+    padding-left: 18px;
+    line-height: 1.55;
+}
+
+.awardsCard li {
+    margin: 4px 0;
+    list-style: none;
+}

@@ -12,31 +12,28 @@ body {
 }
 
 .section {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    /* snap disabled */
     overflow-x: hidden;
 }
 
 .home-section {
-    min-height: 100vh;
+    /* min-height: 100vh; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 #appMount {
-    scroll-snap-type: y mandatory;
     overflow-y: auto;
     overflow-x: hidden;
     height: 100vh;
     overscroll-behavior-y: contain;
-    scroll-padding-top: 80px;
 }
 
 body.single-page-mode #noiseBg {
@@ -72,7 +69,7 @@ body.single-page-mode #cursor {
 
 .section .content {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1500px;
     padding: 2rem;
     margin: 0 auto;
     text-align: center;
@@ -91,7 +88,7 @@ body.single-page-mode #cursor {
 }
 
 .about-section .content {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -101,7 +98,7 @@ body.single-page-mode #cursor {
 }
 
 .contact-section .content {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -111,7 +108,7 @@ body.single-page-mode #cursor {
 }
 
 .home-section .content {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -178,7 +175,7 @@ body.single-page-mode #cursor {
     }
 
     .section {
-        min-height: 100vh;
+        /* min-height: 100vh; */
         padding-top: 80px;
         /* Account for fixed navigation */
     }
@@ -315,7 +312,7 @@ body.single-page-mode #cursor {
     flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
-    max-width: 800px;
+    max-width: 600px;
 }
 
 .skillLogo {

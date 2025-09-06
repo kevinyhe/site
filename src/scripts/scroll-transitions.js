@@ -61,21 +61,24 @@ class ScrollTransitions {
 		this.setupScrollListener();
 
 		// Attach snap controller and anchor navigation
-		this.setupSnapController();
+		// Snap controller disabled per request
 		this.setupAnchorNavigation();
 
-		// Center-snap on initial load
+		// Initial load: honor hash or default to Home top
 		const initialHash = (window.location.hash || "").replace(/^#/, "");
 		if (initialHash && this.idToIndex.has(initialHash)) {
-			// Respect direct links like #about or #contact
+			// Let the browser jump to the anchor naturally
+			// Optionally ensure it's near top
 			setTimeout(() => {
-				this.scrollToIndex &&
-					this.scrollToIndex(this.idToIndex.get(initialHash));
+				document.getElementById(initialHash)?.scrollIntoView({
+					behavior: "instant",
+					block: "start",
+				});
 			}, 0);
 		} else {
-			// Default to Home
+			// Default to Home top
 			setTimeout(() => {
-				this.scrollToIndex && this.scrollToIndex(0);
+				(this.container || document.documentElement).scrollTop = 0;
 			}, 0);
 			try {
 				history.replaceState(null, "", "#home");
@@ -182,131 +185,10 @@ class ScrollTransitions {
 		this.lastProgress = progressBetweenSections;
 	}
 
-	setupSnapController() {
-		const container = this.container;
-		if (!container || !this.sectionEls.length) return;
-		const getHeaderOffset = () => this.getHeaderOffset();
-
-		const clamp = (n, min, max) => Math.max(min, Math.min(max, n));
-
-		const getCurrentIndex = () => {
-			let bestIdx = 0;
-			let bestDist = Infinity;
-			const header = getHeaderOffset();
-			const viewportCenter =
-				container.scrollTop +
-				header +
-				(container.clientHeight - header) / 2;
-			this.sectionEls.forEach((sec, i) => {
-				const secTop = this.getSectionTopInContainer(sec);
-				const secCenter = secTop + sec.offsetHeight / 2;
-				const dist = Math.abs(secCenter - viewportCenter);
-				if (dist < bestDist) {
-					bestDist = dist;
-					bestIdx = i;
-				}
-			});
-			return bestIdx;
-		};
-
-		let lastTargetTop = null;
-		let unlockTimer = null;
-
-		const clearUnlock = () => {
-			if (unlockTimer) {
-				clearTimeout(unlockTimer);
-				unlockTimer = null;
-			}
-		};
-
-		const onScrollEnd = () => {
-			// Finalize centering if CSS snap nudged us
-			if (lastTargetTop != null) {
-				const diff = Math.abs(container.scrollTop - lastTargetTop);
-				if (diff > 2) {
-					container.scrollTo({
-						top: lastTargetTop,
-						behavior: "auto",
-					});
-				}
-			}
-			this.isSnapping = false;
-			this.currentTargetIndex = null;
-			clearUnlock();
-		};
-
-		// Prefer scrollend when supported
-		container.addEventListener("scrollend", onScrollEnd);
-
-		const scrollToIndex = (idx) => {
-			if (idx < 0 || idx >= this.sectionEls.length) return;
-			this.isSnapping = true;
-			this.currentTargetIndex = idx;
-			const header = getHeaderOffset();
-			const sec = this.sectionEls[idx];
-			const secTop = this.getSectionTopInContainer(sec);
-			const secH = sec.offsetHeight;
-			const vpH = container.clientHeight;
-			const visibleH = Math.max(1, vpH - header);
-			let targetTop = Math.round(secTop - header + (secH - visibleH) / 2);
-			// clamp within scrollable range
-			const maxTop = container.scrollHeight - vpH;
-			targetTop = clamp(targetTop, 0, maxTop);
-			lastTargetTop = targetTop;
-			container.scrollTo({ top: targetTop, behavior: "smooth" });
-			// Fallback unlock if scrollend isn't supported
-			clearUnlock();
-			unlockTimer = window.setTimeout(() => {
-				onScrollEnd();
-			}, 700);
-		};
-
-		// Expose for anchor navigation
-		this.scrollToIndex = scrollToIndex;
-
-		const onWheel = (e) => {
-			if (e.ctrlKey) return; // allow zoom gesture
-			const dy = e.deltaY;
-			if (Math.abs(dy) < 2) return; // ignore tiny movements
-			e.preventDefault();
-			const cur = getCurrentIndex();
-			const dir = dy > 0 ? 1 : -1;
-			const next = clamp(cur + dir, 0, this.sectionEls.length - 1);
-			if (this.isSnapping && this.currentTargetIndex !== next) {
-				clearUnlock();
-				this.isSnapping = false;
-				lastTargetTop = null;
-			}
-			if (next !== cur) scrollToIndex(next);
-		};
-
-		const onKey = (e) => {
-			let dir = 0;
-			if (
-				e.code === "ArrowDown" ||
-				e.code === "PageDown" ||
-				e.code === "Space"
-			)
-				dir = 1;
-			if (e.code === "ArrowUp" || e.code === "PageUp") dir = -1;
-			if (!dir) return;
-			e.preventDefault();
-			const cur = getCurrentIndex();
-			const next = clamp(cur + dir, 0, this.sectionEls.length - 1);
-			if (this.isSnapping && this.currentTargetIndex !== next) {
-				clearUnlock();
-				this.isSnapping = false;
-				lastTargetTop = null;
-			}
-			if (next !== cur) scrollToIndex(next);
-		};
-
-		container.addEventListener("wheel", onWheel, { passive: false });
-		window.addEventListener("keydown", onKey, { passive: false });
-	}
+	// setupSnapController removed
 
 	setupAnchorNavigation() {
-		// Intercept in-page anchor clicks like #home, #about, #contact
+		// Intercept in-page anchor clicks and do a simple smooth scroll
 		document.addEventListener("click", (e) => {
 			const a =
 				e.target &&
@@ -317,23 +199,21 @@ class ScrollTransitions {
 			// Ignore plain # or empty
 			if (!href || href === "#") return;
 			const id = decodeURIComponent(href.replace(/^#/, ""));
-			if (!this.idToIndex.has(id)) return; // not one of our sections
+			const el = document.getElementById(id);
+			if (!el) return;
 			e.preventDefault();
-			const idx = this.idToIndex.get(id);
-			if (typeof this.scrollToIndex === "function") {
-				this.scrollToIndex(idx);
-			}
-			// Update URL without triggering hashchange scroll jumps
+			el.scrollIntoView({ behavior: "smooth", block: "start" });
 			history.pushState(null, "", `#${id}`);
 		});
 
 		// If hash changes (e.g., programmatic), center-snap to it
 		window.addEventListener("hashchange", () => {
 			const id = (window.location.hash || "").replace(/^#/, "");
-			if (!id || !this.idToIndex.has(id)) return;
-			if (typeof this.scrollToIndex === "function") {
-				this.scrollToIndex(this.idToIndex.get(id));
-			}
+			if (!id) return;
+			document.getElementById(id)?.scrollIntoView({
+				behavior: "smooth",
+				block: "start",
+			});
 		});
 	}
 

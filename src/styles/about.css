@@ -73,19 +73,12 @@ body {
     background-color: var(--black);
 }
 
-/* Single page mode overrides */
-body.single-page-mode {
-    overflow: hidden;
-}
-
 .fade {
     opacity: 0;
 }
 
 
 #appMount {
-    height: 100vh;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -116,21 +109,6 @@ body.single-page-mode #appMount {
     pointer-events: none;
     z-index: 9999;
 }
-
-.title {
-    user-select: none;
-
-    font-size: 135px;
-    /*font-weight: 600;*/
-
-    /*font-family: 'DM Sans', var(--font);*/
-    /*letter-spacing: -5px;*/
-    font-family: 'DM Serif Display', var(--font);
-    animation: fade-in-top cubic-bezier(0.23, 0.66, 0.19, 0.99) 1.5s forwards;
-
-    line-height: 0.8;
-}
-
 .title strong {
     color: var(--pinkish);
 }
@@ -150,9 +128,6 @@ body.single-page-mode #appMount {
     opacity: 0;
 }
 
-.about {
-    width: 500px;
-}
 
 .quote {
     font-family: 'IBM Plex Serif', var(--font);
