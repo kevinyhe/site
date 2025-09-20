@@ -51,7 +51,7 @@
 #awards .title {
     text-align: left;
     max-width: 800px;
-    margin: 0 auto 16px;
+    margin: 0 auto 0;
     font-size: 135px;
     font-family: 'DM Serif Display', var(--font);
 }
@@ -93,6 +93,12 @@
     text-align: left;
 }
 
+.awardsGroup b {
+    font-weight: 900;
+    font-style: italic;
+    color: var(--white)
+    /* color: var(--pinkish); */
+}
 .awardsGroup li {
     margin: 2px 0;
     list-style: none;
